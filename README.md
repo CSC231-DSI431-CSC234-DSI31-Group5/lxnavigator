@@ -16,12 +16,12 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 
-#####
+# Before writing or run code on flutter.
 1.Upgrade your flutter be up to date
 ````````
 $ flutter upgrade
 ````````
-Before writing or run code on flutter.
+
 2.updates the cache, downloading dependencies if necessary in yaml file (.yml). 
 ``````````
 $ flutter pub get
