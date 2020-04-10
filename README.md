@@ -19,7 +19,7 @@ samples, guidance on mobile development, and a full API reference.
 #####
 1.Upgrade your flutter be up to date
 ````````
-flutter upgrade
+$ flutter upgrade
 ````````
 Before writing or run code on flutter.
 2.updates the cache, downloading dependencies if necessary in yaml file (.yml). 
@@ -29,7 +29,7 @@ $ flutter pub get
 
 3.Try to run code/app to see the result by this command
 ``````````
-flutter run
+$ flutter run
 ``````````
 
 4.if you run code/app to show on Windows Desktop just look instruction below link 👇👇
