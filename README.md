@@ -32,7 +32,7 @@ $ flutter pub get
 $ flutter run
 ``````````
 
-4.if you run code/app to show on Windows Desktop just look instruction below link 👇👇
+4.if you want to run code/app to show on Windows Desktop just look instruction below link 👇👇
 ````````````````
 https://www.youtube.com/watch?v=1bkcq3lO900&t=424s
 ````````````````
