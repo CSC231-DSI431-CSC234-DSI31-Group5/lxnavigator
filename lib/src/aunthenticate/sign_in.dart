@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lxnavigator/src/services/auth.dart';
 import 'package:lxnavigator/src/shared/constant.dart';
+import 'package:lxnavigator/src/shared/loading.dart';
 
 class SignIn extends StatefulWidget {
   final Function toggleView;
@@ -13,6 +14,7 @@ class SignIn extends StatefulWidget {
 class _SignInState extends State<SignIn> {
   final AuthService _auth = AuthService();
   final _formKey = GlobalKey<FormState>();
+  bool loading = false;
 
 //text field state
 
@@ -22,7 +24,7 @@ class _SignInState extends State<SignIn> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return loading ? Loading() : Scaffold(
         backgroundColor: Colors.brown[100],
         appBar: AppBar(
             backgroundColor: Colors.brown[400],
@@ -68,13 +70,18 @@ class _SignInState extends State<SignIn> {
                     ),
                     onPressed: () async {
                       if (_formKey.currentState.validate()) {
-                        print('valid');
+                       setState(() => loading = true);
                         dynamic result = await _auth.SignInWithEmailAndPassword(email, password);
                         if (result == null) {
-                          setState(() => error = 'could not sign in with those credentials');
+                          setState(() {
+                          error = 'could not sign in with those credentials';
+                          loading = false;
+                          }); 
                         }
-                      }
-                    }),
+                      
+                    }
+                    }
+                    ),
                 SizedBox(height: 12.0),
                 Text(
                   error,

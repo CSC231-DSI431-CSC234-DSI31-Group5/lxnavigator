@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lxnavigator/src/services/auth.dart';
 import 'package:lxnavigator/src/shared/constant.dart';
+import 'package:lxnavigator/src/shared/loading.dart';
 
 // "stful" then press tab to show class....extends... StatefulWidget{}
 //  and class ...._State extends State<name of class from above> {}
@@ -16,6 +17,7 @@ class Register extends StatefulWidget {
 class _RegisterState extends State<Register> {
   final AuthService _auth = AuthService();
   final _formKey = GlobalKey<FormState>();
+  bool loading = false;
 
 //text field state
 
@@ -24,7 +26,7 @@ class _RegisterState extends State<Register> {
   String error = '';
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  loading  ? Loading() : Scaffold(
       backgroundColor: Colors.brown[100],
       appBar: AppBar(
           backgroundColor: Colors.brown[400],
@@ -69,13 +71,18 @@ class _RegisterState extends State<Register> {
                   ),
                   onPressed: () async {
                     if (_formKey.currentState.validate()) {
+                      setState(() => loading = true);
                       dynamic result = await _auth.registerWithEmailAndPassword(
                           email, password);
                       if (result == null) {
-                        setState(() => error = 'please supply a valid email');
+                        setState(() {
+                          error = 'please supply a valid email';
+                          loading =false;
+                          });
+                        } 
                       }
                     }
-                  }),
+                  ),
                   SizedBox(height: 12.0),
                   Text(
                     error,
