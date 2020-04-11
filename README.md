@@ -39,3 +39,9 @@ https://www.youtube.com/watch?v=1bkcq3lO900&t=424s
 ```````````````
 https://www.youtube.com/watch?v=V09e5nb95lo
 ````````````````
+
+Some Trick
+
+ "stful" then press tab to show class....extends... StatefulWidget {} 
+
+  and class ...._State extends State<name of class from above> {}
