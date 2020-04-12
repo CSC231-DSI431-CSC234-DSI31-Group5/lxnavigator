@@ -1,3 +1,4 @@
+import 'package:flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:lxnavigator/src/services/auth.dart';
 import 'package:lxnavigator/src/shared/constant.dart';
@@ -24,86 +25,151 @@ class _SignInState extends State<SignIn> {
 
   @override
   Widget build(BuildContext context) {
-    return loading ? Loading() : Scaffold(
-        backgroundColor: Colors.brown[100],
-        appBar: AppBar(
-            backgroundColor: Colors.brown[400],
-            elevation: 0.0,
-            title: Text('Sign in to Brew Crew'),
-            actions: <Widget>[
-              FlatButton.icon(
-                  icon: Icon(Icons.person),
-                  label: Text('Register'),
-                  onPressed: () {
-                    widget.toggleView();
-                  })
-            ]),
-        body: Container(
-          padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
-          child: Form(
-            key: _formKey,
-            child: Column(
-              children: <Widget>[
-                SizedBox(height: 20.0),
-                TextFormField(
-                  decoration: textInputDecoration.copyWith(hintText: 'Email'),
-                    validator: (val) => val.isEmpty ? 'Enter an email' : null,
-                    onChanged: (val) {
-                      setState(() => email = val);
-                    }),
-                SizedBox(height: 20.0),
-                TextFormField(
-                    decoration: textInputDecoration.copyWith(hintText: 'Password'),
-                    obscureText: true,
-                    validator: (val) => val.length < 6
-                        ? 'Enter a password 6+ chars long'
-                        : null,
-                    onChanged: (val) {
-                      setState(() => password = val);
-                    }),
-                SizedBox(height: 20.0),
-                RaisedButton(
-                    color: Colors.pink[400],
-                    child: Text(
-                      'Sign In',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    onPressed: () async {
-                      if (_formKey.currentState.validate()) {
-                       setState(() => loading = true);
-                        dynamic result = await _auth.SignInWithEmailAndPassword(email, password);
-                        if (result == null) {
-                          setState(() {
-                          error = 'could not sign in with those credentials';
-                          loading = false;
-                          }); 
+    return loading
+        ? Loading()
+        : Scaffold(
+            backgroundColor: Colors.brown[100],
+            appBar: AppBar(
+                backgroundColor: Colors.brown[400],
+                elevation: 0.0,
+                title: Text('Sign in to Brew Crew'),
+                actions: <Widget>[
+                  FlatButton.icon(
+                      icon: Icon(Icons.person),
+                      label: Text('Register'),
+                      onPressed: () {
+                        widget.toggleView();
+                      })
+                ]),
+            body: Container(
+              padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  children: <Widget>[
+                    SizedBox(height: 20.0),
+                    TextFormField(
+                        decoration:
+                            textInputDecoration.copyWith(hintText: 'Email'),
+                        validator: (val) =>
+                            val.isEmpty ? 'Enter an email' : null,
+                        onChanged: (val) {
+                          setState(() => email = val);
+                        }),
+                    SizedBox(height: 20.0),
+                    TextFormField(
+                        decoration:
+                            textInputDecoration.copyWith(hintText: 'Password'),
+                        obscureText: true,
+                        validator: (val) => val.length < 6
+                            ? 'Enter a password 6+ chars long'
+                            : null,
+                        onChanged: (val) {
+                          setState(() => password = val);
+                        }),
+                    SizedBox(height: 20.0),
+                    RaisedButton(
+                        color: Colors.pink[400],
+                        child: Text(
+                          'Sign In',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        onPressed: () async {
+                          if (_formKey.currentState.validate()) {
+                            setState(() => loading = true);
+                            dynamic result =
+                                await _auth.SignInWithEmailAndPassword(
+                                    email, password);
+                            if (result == null) {
+                              setState(() {
+                                error =
+                                    'could not sign in with those credentials';
+                                loading = false;
+                              });
+                            }
+                          }
+                        }),
+                    FlatButton(
+                        child: Text(
+                          'Forgot Password?',
+                          style: TextStyle(color: Colors.black),
+                        ),
+                        onPressed: () async {
+                          Navigator.push(context, MaterialPageRoute(
+                              builder: (BuildContext context) {
+                            return Scaffold(
+                              backgroundColor: Colors.brown[100],
+                              appBar: AppBar(
+                                title: Text('Reset Password'),
+                                backgroundColor: Colors.brown[400],
+                                elevation: 0.0,
+                                ),
+                                body: Container(
+                                  padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
+                                  child: Form(
+                                    child: Column(
+                                      children: <Widget>[
+                                        SizedBox(height: 20.0),
+                                        TextFormField(
+                                          decoration: 
+                                              textInputDecoration.copyWith(hintText: 'Email'),
+                                          validator: (val) => 
+                                              val.isEmpty ? 'Enter an email' : null,
+                                              onChanged: (val) {
+                                                setState(() => email = val);
+                                                
+                                              }),
+                                              SizedBox(height: 20.0),
+                                              FlatButton(
+                                                  color: Colors.pink[400],
+                                                  child: Text(
+                                                    'reset',
+                                                    style: TextStyle(color: Colors.white),
+                                                  ),
+                                                  onPressed: () async {
+                                                  _auth.sendPasswordResetEmail(email);
+                                                  if(email != null) {
+                                                    
+                                                  Flushbar(
+                                                  title: 'Reset Password',
+                                                  message: 'We send the detail to $email successfully',
+                                                  icon: Icon(
+                                                  Icons.info_outline,
+                                                  size: 28,
+                                                  color: Colors.blue.shade300,
+                                                  ),
+                                                  leftBarIndicatorColor: Colors.blue.shade300,
+                                                  duration: Duration(seconds: 3),
+                                                  ).show(context);
+                                                  
+                                                  }
+                                                  
+                                                  }
+                                              ),
+                                      ],
+                                  ),
+                                ),
+                                ),
+                              
+                            );
+                            
+                            
+                              }
+                          ),
+                          );
                         }
-                      
-                    }
-                    }
                     ),
-                SizedBox(height: 12.0),
-                Text(
-                  error,
-                  style: TextStyle(color: Colors.red, fontSize: 14.0),
+                    SizedBox(height: 12.0),
+                    Text(
+                      error,
+                      style: TextStyle(color: Colors.red, fontSize: 14.0),
+                      )
+                  ],
                 ),
-              ],
+              ),
             ),
-          ),
-        ));
+        );
+       
   }
 }
 
-// Anonymous sign in
-// child: RaisedButton(
-//   child: Text('Sign in anon'),
-//   onPressed: () async {
-//        dynamic result = await _auth.signInAnon();
-//        if(result == null){
-//          print('error sign in');
-//        } else {
-//          print('signed in');
-//          print(result.uid);
-//        }
-//   }
-// )

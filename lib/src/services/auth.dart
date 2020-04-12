@@ -1,5 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:lxnavigator/src/models/user.dart';
+import 'package:lxnavigator/src/services/database.dart';
+
+    
+     
 
 class AuthService {
 
@@ -30,11 +34,22 @@ class AuthService {
     }
   }
 
+// //reset password
+Future<void> sendPasswordResetEmail(String email) async {
+  try {
+   await _auth.sendPasswordResetEmail(email: email);
+    } catch(e){
+      print(e.toString());
+      return null;
+    } 
+}
   //sign in with email & password
 Future SignInWithEmailAndPassword(String email, String password) async {
     try {
       AuthResult result = await _auth.signInWithEmailAndPassword(email: email, password: password);
       FirebaseUser user = result.user;
+
+
       return _userFromFirebaseUser(user);
     } catch(e){
       print(e.toString());
@@ -46,6 +61,9 @@ Future SignInWithEmailAndPassword(String email, String password) async {
     try {
       AuthResult result = await _auth.createUserWithEmailAndPassword(email: email, password: password);
       FirebaseUser user = result.user;
+
+      //create a new document for the user with the uid
+      await DatabaseService(uid: user.uid).updateUserData('','','');
       return _userFromFirebaseUser(user);
     } catch(e){
       print(e.toString());
@@ -62,4 +80,5 @@ Future SignInWithEmailAndPassword(String email, String password) async {
         return null;
     }
   }
+
 }

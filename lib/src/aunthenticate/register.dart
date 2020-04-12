@@ -8,6 +8,7 @@ import 'package:lxnavigator/src/shared/loading.dart';
 
 class Register extends StatefulWidget {
   final Function toggleView;
+  
   Register({this.toggleView});
 
   @override
@@ -20,10 +21,14 @@ class _RegisterState extends State<Register> {
   bool loading = false;
 
 //text field state
-
   String email = '';
   String password = '';
   String error = '';
+  String username= '';
+  String firstname='';
+  String lastname='';
+  String occupation = '';
+  
   @override
   Widget build(BuildContext context) {
     return  loading  ? Loading() : Scaffold(
@@ -46,14 +51,14 @@ class _RegisterState extends State<Register> {
           key: _formKey,
           child: Column(
             children: <Widget>[
-              SizedBox(height: 20.0),
+             
               TextFormField(
                 decoration: textInputDecoration.copyWith(hintText: 'Email'),
                   validator: (val) => val.isEmpty ? 'Enter an email' : null,
                   onChanged: (val) {
                     setState(() => email = val);
                   }),
-              SizedBox(height: 20.0),
+              SizedBox(height: 5.0),
               TextFormField(
                   decoration: textInputDecoration.copyWith(hintText: 'Password'),
                   obscureText: true,
@@ -62,7 +67,28 @@ class _RegisterState extends State<Register> {
                   onChanged: (val) {
                     setState(() => password = val);
                   }),
-              SizedBox(height: 20.0),
+              SizedBox(height: 5.0),
+               TextFormField(
+                decoration: textInputDecoration.copyWith(hintText: 'First name'),
+                  validator: (val) => val.isEmpty ? 'Enter an First name' : null,
+                  onChanged: (val) {
+                    setState(() => firstname = val);
+                  }),
+              SizedBox(height: 5.0),
+               TextFormField(
+                decoration: textInputDecoration.copyWith(hintText: 'Last name'),
+                  validator: (val) => val.isEmpty ? 'Enter an Last name' : null,
+                  onChanged: (val) {
+                    setState(() => firstname = val);
+                  }),
+              SizedBox(height: 5.0),
+               TextFormField(
+                decoration: textInputDecoration.copyWith(hintText: 'Occupation'),
+                  validator: (val) => val.isEmpty ? 'Enter an Occupation' : null,
+                  onChanged: (val) {
+                    setState(() => occupation = val);
+                  }),
+              SizedBox(height: 5.0),
               RaisedButton(
                   color: Colors.pink[400],
                   child: Text(
@@ -83,7 +109,7 @@ class _RegisterState extends State<Register> {
                       }
                     }
                   ),
-                  SizedBox(height: 12.0),
+                  SizedBox(height: 5.0),
                   Text(
                     error,
                     style: TextStyle(color: Colors.red, fontSize: 14.0),
