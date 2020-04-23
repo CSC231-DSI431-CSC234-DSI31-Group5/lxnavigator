@@ -35,6 +35,10 @@ dependencies:
   flushbar: ^1.9.1
   provider: ^4.0.5
   flutter_spinkit: "^4.1.2"
+  flutter_map: ^0.8.2
+  flutter_map_tappable_polyline: ^0.3.1
+  user_location: ^0.1.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
