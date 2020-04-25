@@ -8,6 +8,7 @@ import 'package:lxnavigator/src/shared/loading.dart';
 
 class Register extends StatefulWidget {
   final Function toggleView;
+
   
   Register({this.toggleView});
 
@@ -99,7 +100,7 @@ class _RegisterState extends State<Register> {
                     if (_formKey.currentState.validate()) {
                       setState(() => loading = true);
                       dynamic result = await _auth.registerWithEmailAndPassword(
-                          email, password);
+                          email, password,firstname,lastname,occupation);
                       if (result == null) {
                         setState(() {
                           error = 'please supply a valid email';
