@@ -3,13 +3,38 @@ import 'package:lxnavigator/src/models/user.dart';
 import 'package:lxnavigator/src/services/auth.dart';
 import 'package:lxnavigator/src/wrapper.dart';
 import 'package:provider/provider.dart';
+import 'package:splashscreen/splashscreen.dart';
 
-
-void main() {
-  runApp(MyApp());
+void main(){
+  runApp(new MaterialApp(
+    home: new MyApp(),
+  ));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return SplashScreen(
+      seconds: 5,
+      navigateAfterSeconds: AfterSplash(),
+      title: Text('Welcome In SplashScreen'),
+      image: Image.asset('assets/images/logo/flutter_logo.png'),
+      backgroundColor: Colors.white,
+      styleTextUnderTheLoader: TextStyle(),
+      photoSize: 50.0,
+      loaderColor: Colors.red,
+
+
+    );
+  }
+}
+
+class AfterSplash extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
