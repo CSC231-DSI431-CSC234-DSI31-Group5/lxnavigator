@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:lxnavigator/src/models/user.dart';
-import 'package:lxnavigator/src/services/database.dart';
+import 'package:lxnavigator/src/presenters/database.dart';
 
     
      
@@ -9,7 +9,7 @@ class AuthService {
 
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
-
+  
   //create user obj based on FirebaseUser
   User _userFromFirebaseUser(FirebaseUser user) {
     return user != null ? User(uid: user.uid) : null; 
