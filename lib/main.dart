@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:lxnavigator/src/models/user.dart';
-import 'package:lxnavigator/src/services/auth.dart';
+import 'package:lxnavigator/src/presenters/auth.dart';
 import 'package:lxnavigator/src/wrapper.dart';
 import 'package:provider/provider.dart';
 import 'package:splashscreen/splashscreen.dart';
 
-void main(){
+// void main(){
+//   runApp(new MaterialApp(
+//     home: new MyApp(),
+//   ));
+// }
+
+void main() {
   runApp(new MaterialApp(
-    home: new MyApp(),
+    home: MyApp(),
   ));
 }
 
@@ -22,14 +28,12 @@ class _MyAppState extends State<MyApp> {
     return SplashScreen(
       seconds: 5,
       navigateAfterSeconds: AfterSplash(),
-      title: Text('Welcome In SplashScreen'),
+      title: Text('Welcome In LX Navigator'),
       image: Image.asset('assets/images/logo/flutter_logo.png'),
       backgroundColor: Colors.white,
       styleTextUnderTheLoader: TextStyle(),
       photoSize: 50.0,
       loaderColor: Colors.red,
-
-
     );
   }
 }
@@ -39,10 +43,9 @@ class AfterSplash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamProvider<User>.value(
-        value: AuthService().user,
-          child: MaterialApp(
-             home: Wrapper(),
-             
+      value: AuthService().user,
+      child: MaterialApp(
+        home: Wrapper(),
       ),
     );
   }

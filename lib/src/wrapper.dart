@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lxnavigator/src/aunthenticate/aunthenicate.dart';
-import 'package:lxnavigator/src/home/view/home.dart';
+import 'package:lxnavigator/src/home/views/home.dart';
 import 'package:lxnavigator/src/models/user.dart';
 import 'package:provider/provider.dart';
 

@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:lxnavigator/src/models/user.dart';
-import 'package:lxnavigator/src/services/database.dart';
+import 'package:lxnavigator/src/presenters/database.dart';
 
     
      
@@ -9,7 +9,7 @@ class AuthService {
 
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
-
+  
   //create user obj based on FirebaseUser
   User _userFromFirebaseUser(FirebaseUser user) {
     return user != null ? User(uid: user.uid) : null; 
@@ -63,7 +63,7 @@ Future SignInWithEmailAndPassword(String email, String password) async {
       FirebaseUser user = result.user;
 
       //create a new document for the user with the uid
-      await DatabaseService(uid: user.uid).updateUserData(firstname,lastname,occupation);
+      await DatabaseService(uid: user.uid).updateUserData(email,firstname,lastname,occupation);
       return _userFromFirebaseUser(user);
     } catch(e){
       print(e.toString());

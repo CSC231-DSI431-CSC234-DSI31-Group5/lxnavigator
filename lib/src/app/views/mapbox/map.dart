@@ -64,7 +64,11 @@ class MyMapPage extends StatelessWidget {
     //userLocationOptions.updateMapLocationOnPositionChange = false;
 
     return Scaffold(
-      appBar: AppBar(title: Text("Location")),
+     appBar: AppBar(
+          title: Text('Map'),
+          backgroundColor: Colors.blue[400],
+          elevation: 0.0,
+    ),
       body: FlutterMap(
         options: MapOptions(
           center: LatLng(13.651055698,100.496627),

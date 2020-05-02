@@ -1,6 +1,6 @@
 import 'package:flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
-import 'package:lxnavigator/src/services/auth.dart';
+import 'package:lxnavigator/src/presenters/auth.dart';
 import 'package:lxnavigator/src/shared/constant.dart';
 import 'package:lxnavigator/src/shared/loading.dart';
 
@@ -32,7 +32,7 @@ class _SignInState extends State<SignIn> {
             appBar: AppBar(
                 backgroundColor: Colors.brown[400],
                 elevation: 0.0,
-                title: Text('Sign in to Brew Crew'),
+                title: Text('Sign in to LX Navigator'),
                 actions: <Widget>[
                   FlatButton.icon(
                       icon: Icon(Icons.person),
