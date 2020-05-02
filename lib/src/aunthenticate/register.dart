@@ -21,7 +21,7 @@ class _RegisterState extends State<Register> {
   final _formKey = GlobalKey<FormState>();
   bool loading = false;
   
-  
+ 
   
 //text field state
   String email = '';
@@ -91,7 +91,7 @@ class _RegisterState extends State<Register> {
                         validator: (val) =>
                             val.isEmpty ? 'Enter an Last name' : null,
                         onChanged: (val) {
-                          setState(() => firstname = val);
+                          setState(() => lastname = val);
                         }),
                     SizedBox(height: 5.0),
                     TextFormField(
