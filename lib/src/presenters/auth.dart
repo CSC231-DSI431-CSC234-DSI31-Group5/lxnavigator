@@ -63,7 +63,7 @@ Future SignInWithEmailAndPassword(String email, String password) async {
       FirebaseUser user = result.user;
 
       //create a new document for the user with the uid
-      await DatabaseService(uid: user.uid).updateUserData(firstname,lastname,occupation);
+      await DatabaseService(uid: user.uid).updateUserData(email,firstname,lastname,occupation);
       return _userFromFirebaseUser(user);
     } catch(e){
       print(e.toString());
