@@ -1,15 +1,27 @@
 import 'package:flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
+import 'package:lxnavigator/src/aunthenticate/reset.dart';
 import 'package:lxnavigator/src/presenters/auth.dart';
 import 'package:lxnavigator/src/shared/constant.dart';
 import 'package:lxnavigator/src/shared/loading.dart';
 
+import 'register.dart';
+
 class SignIn extends StatefulWidget {
   final Function toggleView;
+
   SignIn({this.toggleView});
 
   @override
   _SignInState createState() => _SignInState();
+}
+
+Widget showLogo() {
+  return Container(
+    width: 160.0, // Control the logo size
+    height: 160.0,
+    child: Image.asset('assets/images/logo/Logo1.png'),
+  );
 }
 
 class _SignInState extends State<SignIn> {
@@ -28,38 +40,65 @@ class _SignInState extends State<SignIn> {
     return loading
         ? Loading()
         : Scaffold(
-            backgroundColor: Colors.brown[100],
-            appBar: AppBar(
-                backgroundColor: Colors.brown[400],
-                elevation: 0.0,
-                title: Text('Sign in to LX Navigator'),
-                actions: <Widget>[
-                  FlatButton.icon(
-                      icon: Icon(Icons.person),
-                      label: Text('Register'),
-                      onPressed: () {
-                        widget.toggleView();
-                      })
-                ]),
+            resizeToAvoidBottomPadding: false,
+//            appBar: AppBar(
+//                backgroundColor: Colors.brown[400],
+//                elevation: 0.0,
+//                title: Text('Sign in to LX Navigator'),
+//                actions: <Widget>[
+//                  FlatButton.icon(
+//                      icon: Icon(Icons.person),
+//                      label: Text('Register'),
+//                      onPressed: () {
+//                        widget.toggleView();
+//                      })
+//                ]),
             body: Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/images/background/BG_Login.png"),
+                  fit: BoxFit.cover,
+                ),
+              ),
               padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
               child: Form(
                 key: _formKey,
                 child: Column(
                   children: <Widget>[
                     SizedBox(height: 20.0),
+                    SizedBox(height: 50.0),
+                    showLogo(),
+                    new Padding(
+                      padding: new EdgeInsets.all(5.0),
+                      child: new Text(
+                        'LX Navigator',
+                        style: TextStyle(
+                            color: Colors.black54,
+                            fontSize: 30.0,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    SizedBox(height: 5.0),
                     TextFormField(
-                        decoration:
-                            textInputDecoration.copyWith(hintText: 'Email'),
+                        decoration: InputDecoration(
+                            labelText: 'Email',
+                            labelStyle: TextStyle(
+                                color: Colors.black54,
+                                fontSize: 20.0,
+                                fontWeight: FontWeight.bold)),
                         validator: (val) =>
                             val.isEmpty ? 'Enter an email' : null,
                         onChanged: (val) {
-                          setState(() => email = val);
+                          setState(() => email = val.trim());
                         }),
-                    SizedBox(height: 20.0),
+                    SizedBox(height: 10.0),
                     TextFormField(
-                        decoration:
-                            textInputDecoration.copyWith(hintText: 'Password'),
+                        decoration: InputDecoration(
+                            labelText: 'Password',
+                            labelStyle: TextStyle(
+                                color: Colors.black54,
+                                fontSize: 20.0,
+                                fontWeight: FontWeight.bold)),
                         obscureText: true,
                         validator: (val) => val.length < 6
                             ? 'Enter a password 6+ chars long'
@@ -67,11 +106,11 @@ class _SignInState extends State<SignIn> {
                         onChanged: (val) {
                           setState(() => password = val);
                         }),
-                    SizedBox(height: 20.0),
+                    SizedBox(height: 10.0),
                     RaisedButton(
-                        color: Colors.pink[400],
+                        color: Colors.blue,
                         child: Text(
-                          'Sign In',
+                          '                           Sign In                           ',
                           style: TextStyle(color: Colors.white),
                         ),
                         onPressed: () async {
@@ -89,87 +128,38 @@ class _SignInState extends State<SignIn> {
                             }
                           }
                         }),
+                    SizedBox(height: 5.0),
+                    RaisedButton(
+                        color: Colors.indigo,
+                        child: Text(
+                          '                          Register                          ',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        onPressed: () {
+                          widget.toggleView();
+                        }),
                     FlatButton(
                         child: Text(
                           'Forgot Password?',
-                          style: TextStyle(color: Colors.black),
+                          style: TextStyle(
+                              decoration: TextDecoration.underline,
+                              color: Colors.black),
                         ),
-                        onPressed: () async {
-                          Navigator.push(context, MaterialPageRoute(
-                              builder: (BuildContext context) {
-                            return Scaffold(
-                              backgroundColor: Colors.brown[100],
-                              appBar: AppBar(
-                                title: Text('Reset Password'),
-                                backgroundColor: Colors.brown[400],
-                                elevation: 0.0,
-                                ),
-                                body: Container(
-                                  padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
-                                  child: Form(
-                                    child: Column(
-                                      children: <Widget>[
-                                        SizedBox(height: 20.0),
-                                        TextFormField(
-                                          decoration: 
-                                              textInputDecoration.copyWith(hintText: 'Email'),
-                                          validator: (val) => 
-                                              val.isEmpty ? 'Enter an email' : null,
-                                              onChanged: (val) {
-                                                setState(() => email = val);
-                                                
-                                              }),
-                                              SizedBox(height: 20.0),
-                                              FlatButton(
-                                                  color: Colors.pink[400],
-                                                  child: Text(
-                                                    'reset',
-                                                    style: TextStyle(color: Colors.white),
-                                                  ),
-                                                  onPressed: () async {
-                                                  _auth.sendPasswordResetEmail(email);
-                                                  if(email != null) {
-                                                    
-                                                  Flushbar(
-                                                  title: 'Reset Password',
-                                                  message: 'We send the detail to $email successfully',
-                                                  icon: Icon(
-                                                  Icons.info_outline,
-                                                  size: 28,
-                                                  color: Colors.blue.shade300,
-                                                  ),
-                                                  leftBarIndicatorColor: Colors.blue.shade300,
-                                                  duration: Duration(seconds: 3),
-                                                  ).show(context);
-                                                  
-                                                  }
-                                                  
-                                                  }
-                                              ),
-                                      ],
-                                  ),
-                                ),
-                                ),
-                              
-                            );
-                            
-                            
-                              }
-                          ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Reset()),
                           );
-                        }
-                    ),
+                        }),
                     SizedBox(height: 12.0),
                     Text(
                       error,
                       style: TextStyle(color: Colors.red, fontSize: 14.0),
-                      )
+                    )
                   ],
                 ),
               ),
             ),
-        );
-       
+          );
   }
 }
-
