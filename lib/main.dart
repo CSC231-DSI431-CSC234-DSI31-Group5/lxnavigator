@@ -28,11 +28,15 @@ class _MyAppState extends State<MyApp> {
     return SplashScreen(
       seconds: 5,
       navigateAfterSeconds: AfterSplash(),
-      title: Text('Welcome In LX Navigator'),
-      image: Image.asset('assets/images/logo/flutter_logo.png'),
-      backgroundColor: Colors.white,
+      title: Text(
+        'Welcome In LX Navigator',
+        style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+
+      ),
+      image: Image.asset('assets/images/logo/Logo1.png'),
+      imageBackground: AssetImage('assets/images/background/BG_Home.png'),
       styleTextUnderTheLoader: TextStyle(),
-      photoSize: 50.0,
+      photoSize: 100.0,
       loaderColor: Colors.red,
     );
   }
