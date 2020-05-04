@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lxnavigator/src/aunthenticate/aunthenicate.dart';
+// import 'package:lxnavigator/src/aunthenticate/aunthenicate.dart';
+import 'package:lxnavigator/src/aunthenticate/sign_in.dart';
 import 'package:lxnavigator/src/home/views/home.dart';
 import 'package:lxnavigator/src/models/user.dart';
 import 'package:provider/provider.dart';
@@ -13,7 +14,7 @@ class Wrapper extends StatelessWidget {
 
     //return either Home and Aunthenicate widget
    if(user == null) {
-      return Authenticate();
+      return SignIn();
     } else {
       return Home();
     }

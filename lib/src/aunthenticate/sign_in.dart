@@ -1,11 +1,12 @@
-import 'package:flushbar/flushbar.dart';
+// import 'package:flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
+import 'package:lxnavigator/src/aunthenticate/register.dart';
 import 'package:lxnavigator/src/aunthenticate/reset.dart';
+import 'package:lxnavigator/src/home/views/home.dart';
 import 'package:lxnavigator/src/presenters/auth.dart';
-import 'package:lxnavigator/src/shared/constant.dart';
+// import 'package:lxnavigator/src/shared/constant.dart';
 import 'package:lxnavigator/src/shared/loading.dart';
-
-import 'register.dart';
+// import 'register.dart';
 
 class SignIn extends StatefulWidget {
   final Function toggleView;
@@ -125,6 +126,11 @@ class _SignInState extends State<SignIn> {
                                     'could not sign in with those credentials';
                                 loading = false;
                               });
+                            } else {
+                              Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Home()),
+                          );
                             }
                           }
                         }),
@@ -136,7 +142,11 @@ class _SignInState extends State<SignIn> {
                           style: TextStyle(color: Colors.white),
                         ),
                         onPressed: () {
-                          widget.toggleView();
+                          // widget.toggleView();
+                           Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Register()),
+                          );
                         }),
                     FlatButton(
                         child: Text(
