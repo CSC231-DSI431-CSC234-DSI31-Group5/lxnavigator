@@ -12,7 +12,7 @@ class Home extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.brown[50],
       appBar: AppBar(
-        title: Text('LX Navigator'),
+        title: Text('LX Navigator2'),
         backgroundColor: Colors.brown[400],
         elevation: 0.0,
       ),
