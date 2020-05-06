@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lxnavigator/src/app/views/indoormap/activity/activityTwo.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothEight.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothEleven.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothFive.dart';
@@ -9,15 +10,15 @@ import 'package:lxnavigator/src/app/views/indoormap/booth/boothSeven.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothSix.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothTen.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothThree.dart';
-import 'package:lxnavigator/src/app/views/indoormap/booth/boothTwo.dart';
 import 'package:photo_view/photo_view.dart';
 
-class IndoorMap extends StatefulWidget {
+//Workshop booth
+class BoothTwo extends StatefulWidget {
   @override
-  _IndoorMapState createState() => _IndoorMapState();
+  _BoothTwoState createState() => _BoothTwoState();
 }
 
-class _IndoorMapState extends State<IndoorMap> {
+class _BoothTwoState extends State<BoothTwo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +28,8 @@ class _IndoorMapState extends State<IndoorMap> {
         backgroundColor: Colors.brown[400],
         elevation: 0.0,
       ),
-      body: Column(
+
+ body: Column(
         children: <Widget>[
           Expanded(
             child: Column(
@@ -73,15 +75,15 @@ class _IndoorMapState extends State<IndoorMap> {
                       Expanded(
                         child: new Center(
                           child: RaisedButton(
-                              color: Colors.pink[400],
+                              color: Colors.black,
                               child: Text(
                                 'WORKSHOP',
                                 style: TextStyle(color: Colors.white),
                               ),
                               padding: EdgeInsets.all(8.0),
                               onPressed: () async {
-                              Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => BoothTwo()));
+                              // Navigator.push(context,
+                              // MaterialPageRoute(builder: (context) => BoothTwo()));
                               }),
                         ),
                       ),
@@ -271,6 +273,21 @@ class _IndoorMapState extends State<IndoorMap> {
                               }),
                         ),
                       ),
+                      Expanded(
+                        child: new Center(
+                          child: RaisedButton(
+                              color: Colors.pink[400],
+                              child: Text(
+                                'Detail',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              padding: EdgeInsets.all(8.0),
+                              onPressed: () async {
+                                 Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => ActivityTwo()));
+                              }),
+                        ),
+                      ),
                    ],
                   ),
                 ),
@@ -283,4 +300,4 @@ class _IndoorMapState extends State<IndoorMap> {
     );
   }
 }
-
+// imageProvider: const AssetImage("assets/images/indoormap/lxfirstfloor.jpg",),

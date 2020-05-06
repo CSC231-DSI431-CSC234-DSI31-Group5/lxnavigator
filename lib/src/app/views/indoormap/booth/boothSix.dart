@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lxnavigator/src/app/views/indoormap/activity/activitySix.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothEight.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothEleven.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothFive.dart';
@@ -6,18 +7,18 @@ import 'package:lxnavigator/src/app/views/indoormap/booth/boothFour.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothNine.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothOne.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothSeven.dart';
-import 'package:lxnavigator/src/app/views/indoormap/booth/boothSix.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothTen.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothThree.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothTwo.dart';
 import 'package:photo_view/photo_view.dart';
 
-class IndoorMap extends StatefulWidget {
+//Escape Room Booth
+class BoothSix extends StatefulWidget {
   @override
-  _IndoorMapState createState() => _IndoorMapState();
+  _BoothSixState createState() => _BoothSixState();
 }
 
-class _IndoorMapState extends State<IndoorMap> {
+class _BoothSixState extends State<BoothSix> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +28,7 @@ class _IndoorMapState extends State<IndoorMap> {
         backgroundColor: Colors.brown[400],
         elevation: 0.0,
       ),
-      body: Column(
+     body: Column(
         children: <Widget>[
           Expanded(
             child: Column(
@@ -155,15 +156,15 @@ class _IndoorMapState extends State<IndoorMap> {
                       Expanded(
                         child: new Center(
                           child: RaisedButton(
-                              color: Colors.pink[400],
+                              color: Colors.black,
                               child: Text(
                                 'ESCAPE ROOM',
                                 style: TextStyle(color: Colors.white),
                               ),
                               padding: EdgeInsets.all(8.0),
                               onPressed: () async {
-                                 Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => BoothSix()));
+                              //    Navigator.push(context,
+                              // MaterialPageRoute(builder: (context) => BoothSix()));
 
                               }),
                         ),
@@ -270,6 +271,23 @@ class _IndoorMapState extends State<IndoorMap> {
                               MaterialPageRoute(builder: (context) => BoothEleven()));
                               }),
                         ),
+                        
+                      ),
+                       Expanded(
+                        child: new Center(
+                          child: RaisedButton(
+                              color: Colors.pink[400],
+                              child: Text(
+                                'Detail',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              padding: EdgeInsets.all(8.0),
+                              onPressed: () async {
+                                 Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => ActivitySix()));
+                              }),
+                        ),
+                        
                       ),
                    ],
                   ),
@@ -283,4 +301,4 @@ class _IndoorMapState extends State<IndoorMap> {
     );
   }
 }
-
+// imageProvider: const AssetImage("assets/images/indoormap/lxfirstfloor.jpg",),
