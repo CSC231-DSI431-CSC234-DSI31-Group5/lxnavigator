@@ -40,7 +40,6 @@ class _SignInState extends State<SignIn> {
     return loading
         ? Loading()
         : Scaffold(
-            resizeToAvoidBottomPadding: false,
 //            appBar: AppBar(
 //                backgroundColor: Colors.brown[400],
 //                elevation: 0.0,
@@ -63,6 +62,7 @@ class _SignInState extends State<SignIn> {
               padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
               child: Form(
                 key: _formKey,
+    child: SingleChildScrollView(
                 child: Column(
                   children: <Widget>[
                     SizedBox(height: 20.0),
@@ -159,6 +159,7 @@ class _SignInState extends State<SignIn> {
                   ],
                 ),
               ),
+            ),
             ),
           );
   }

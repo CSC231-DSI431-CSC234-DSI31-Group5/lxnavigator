@@ -42,7 +42,6 @@ class _RegisterState extends State<Register> {
     return loading
         ? Loading()
         : Scaffold(
-            resizeToAvoidBottomPadding: false,
 //            appBar: AppBar(
 //                backgroundColor: Colors.brown[400],
 //                elevation: 0.0,
