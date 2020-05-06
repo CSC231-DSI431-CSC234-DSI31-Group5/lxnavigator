@@ -61,6 +61,7 @@ flutter:
   assets:
     - assets/images/logo/flutter_logo.png
     - assets/images/indoormap/lxfirstfloor.jpg
+    - assets/images/indoormap/booth/Group 2088.png
     - assets/images/avatar/profile.png
   #   - images/a_dot_ham.jpeg
 
