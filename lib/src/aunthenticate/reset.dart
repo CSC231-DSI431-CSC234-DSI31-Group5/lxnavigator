@@ -3,7 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lxnavigator/src/aunthenticate/sign_in.dart';
 import 'package:lxnavigator/src/presenters/auth.dart';
-import 'package:lxnavigator/src/shared/constant.dart';
 import 'package:lxnavigator/src/shared/loading.dart';
 
 class Reset extends StatefulWidget {

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:lxnavigator/src/aunthenticate/sign_in.dart';
 import 'package:lxnavigator/src/home/views/home.dart';
 import 'package:lxnavigator/src/presenters/auth.dart';
-import 'package:lxnavigator/src/shared/constant.dart';
 import 'package:lxnavigator/src/shared/loading.dart';
 
 // "stful" then press tab to show class....extends... StatefulWidget{}
