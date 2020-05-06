@@ -104,7 +104,7 @@ class _DrawerCodeState extends State<DrawerCode> {
                                 shape: BoxShape.circle,
                                 image: DecorationImage(
                                     image: AssetImage(
-                                        'assets/images/avatar/profile.png'),
+                                        'assets/images/avatar/profile2.png'),
                                     fit: BoxFit.fill),
                               ),
                             ),

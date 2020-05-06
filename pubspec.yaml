@@ -58,16 +58,27 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  assets:
-    - assets/images/logo/flutter_logo.png
-    - assets/images/indoormap/lxfirstfloor.jpg
-    - assets/images/avatar/profile.png
+  assets:.
+    - assets/images/avatar/profile2.png
     - assets/images/background/BG_Home.png
     - assets/images/background/BG_Login.png
     - assets/images/background/BG_Register.png
     - assets/images/logo/Logo1.png
-  #   - images/a_dot_ham.jpeg
+  #indoor picture
+    - assets/images/indoormap/Acitivity.png
+    - assets/images/indoormap/Design.png
+    - assets/images/indoormap/DirectedLearning.png
+    - assets/images/indoormap/EISC.png
+    - assets/images/indoormap/EscapeRoom.png
+    - assets/images/indoormap/MC.png
+    - assets/images/indoormap/Peel.png
+    - assets/images/indoormap/Popup.png
+    - assets/images/indoormap/Study.png
+    - assets/images/indoormap/VR.png
+    - assets/images/indoormap/Workshop.png
 
+
+  #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resasolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
