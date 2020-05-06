@@ -58,14 +58,14 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  assets:.
+  assets:
     - assets/images/avatar/profile2.png
     - assets/images/background/BG_Home.png
     - assets/images/background/BG_Login.png
     - assets/images/background/BG_Register.png
     - assets/images/logo/Logo1.png
-  #indoor picture
-    - assets/images/indoormap/Acitivity.png
+
+    - assets/images/indoormap/Activity.png
     - assets/images/indoormap/Design.png
     - assets/images/indoormap/DirectedLearning.png
     - assets/images/indoormap/EISC.png
