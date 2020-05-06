@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lxnavigator/src/app/views/mapbox/map.dart';
 import 'package:lxnavigator/src/app/views/indoormap/indoormap.dart';
+import 'package:lxnavigator/src/aunthenticate/sign_in.dart';
 // import 'package:lxnavigator/src/models/user.dart';
 
 class Home extends StatelessWidget {
@@ -148,7 +149,12 @@ class _DrawerCodeState extends State<DrawerCode> {
                             style: TextStyle(color: Colors.white),
                           ),
                           onPressed: () async {
-                            await _auth.signOut();
+                            if( _auth.signOut() != null){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => SignIn()),
+                          );
+                            }
                           }),
                     ),
                   ],

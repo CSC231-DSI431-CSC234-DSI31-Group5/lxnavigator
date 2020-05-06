@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:lxnavigator/src/aunthenticate/sign_in.dart';
+import 'package:lxnavigator/src/home/views/home.dart';
 import 'package:lxnavigator/src/presenters/auth.dart';
-import 'package:lxnavigator/src/shared/constant.dart';
 import 'package:lxnavigator/src/shared/loading.dart';
 
 // "stful" then press tab to show class....extends... StatefulWidget{}
@@ -73,7 +74,11 @@ class _RegisterState extends State<Register> {
                             iconSize: 30,
                             alignment: Alignment(-15, 20),
                             onPressed: () {
-                              widget.toggleView();
+                              // widget.toggleView();
+                               Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => SignIn()),
+                          );
                             }),
                       ]),
                       showLogo(),
@@ -204,6 +209,11 @@ class _RegisterState extends State<Register> {
                                   error = 'please supply a valid email';
                                   loading = false;
                                 });
+                              } else {
+                                 Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Home()),
+                          );
                               }
                             }
                           }),
