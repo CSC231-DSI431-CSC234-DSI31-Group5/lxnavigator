@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:lxnavigator/src/app/views/mapbox/map.dart';
 import 'package:lxnavigator/src/app/views/indoormap/indoormap.dart';
 import 'package:lxnavigator/src/aunthenticate/sign_in.dart';
-// import 'package:lxnavigator/src/models/user.dart';
+
 
 class Home extends StatelessWidget {
   Widget showLogo() {
@@ -34,7 +34,7 @@ class Home extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
+        padding: EdgeInsets.only(top: 20.0),
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
@@ -60,9 +60,9 @@ class Home extends StatelessWidget {
                       fontWeight: FontWeight.bold),
                 ),
               ),
-              SizedBox(height: 170.0),
+              SizedBox(height: 180.0),
               new SizedBox(
-                height: 50,
+                height: 60,
                 child: new RaisedButton(
                     color: Colors.yellow[800],
                     child: Row(
@@ -86,7 +86,7 @@ class Home extends StatelessWidget {
                     }),
               ),
               new SizedBox(
-                height: 50,
+                height: 60,
                 child: new RaisedButton(
                     color: Colors.orange[800],
                     child: Row(
@@ -164,10 +164,10 @@ class _DrawerCodeState extends State<DrawerCode> {
                           Flexible(
                             child: Container(
                               padding: EdgeInsets.symmetric(
-                                  vertical: 20.0, horizontal: 50.0),
-                              width: 100,
-                              height: 100,
-                              margin: EdgeInsets.only(bottom: 5),
+                                  vertical: 20.0, horizontal: 60.0),
+                              width: 70,
+                              height: 70,
+                              margin: EdgeInsets.only(top: 70),
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                                 image: DecorationImage(
@@ -181,12 +181,12 @@ class _DrawerCodeState extends State<DrawerCode> {
                       ),
                     ),
                     new Padding(
-                      padding: new EdgeInsets.all(5.0),
+                      padding: new EdgeInsets.only(left:5.0),
                       child: new Text(
                         '    Name',
                         style: TextStyle(
                             color: Colors.black54,
-                            fontSize: 12.0,
+                            fontSize: 14.0,
                             fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -202,19 +202,19 @@ class _DrawerCodeState extends State<DrawerCode> {
                                 "\n\n",
                             style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 17.0,
+                                fontSize: 19.0,
                                 fontWeight: FontWeight.bold),
                           ),
                         );
                       }).toList(),
                     )),
                     new Padding(
-                      padding: new EdgeInsets.all(5.0),
+                      padding: new EdgeInsets.only(left:5.0),
                       child: new Text(
                         '    Email',
                         style: TextStyle(
                             color: Colors.black54,
-                            fontSize: 12.0,
+                            fontSize: 14.0,
                             fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -225,21 +225,21 @@ class _DrawerCodeState extends State<DrawerCode> {
                         return new ListTile(
                           title: Text(
                             document['email'] + "\n\n",
-                            style:
-                                TextStyle(color: Colors.black, 
-                                fontSize: 17.0,
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 19.0,
                                 fontWeight: FontWeight.bold),
                           ),
                         );
                       }).toList(),
                     )),
                     new Padding(
-                      padding: new EdgeInsets.all(5.0),
+                      padding: new EdgeInsets.only(left:5.0),
                       child: new Text(
                         '    Occupation',
                         style: TextStyle(
                             color: Colors.black54,
-                            fontSize: 12.0,
+                            fontSize: 14.0,
                             fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -252,31 +252,40 @@ class _DrawerCodeState extends State<DrawerCode> {
                             document['occupation'] + "\n\n",
                             style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 17.0,
+                                fontSize: 19.0,
                                 fontWeight: FontWeight.bold),
                           ),
                         );
                       }).toList(),
                     )),
-                    SizedBox(height: 140.0),
+                    SizedBox(height: 120.0),
                     Container(
+                      padding: EdgeInsets.symmetric(horizontal: 30.0),
                       child: RaisedButton(
+                        onPressed: () async {
+                          if (_auth.signOut() != null) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => SignIn()),
+                            );
+                          }
+                        },
+                        padding: EdgeInsets.all(0.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                            colors: [Colors.orange[800], Colors.orange[300]],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          )),
                           padding: EdgeInsets.symmetric(
-                              vertical: 15.0, horizontal: 0.0),
-                          color: Colors.orange[400],
+                              horizontal: 90.0, vertical: 6.0),
                           child: Text(
                             'Logout',
                             style: TextStyle(color: Colors.white, fontSize: 20),
                           ),
-                          onPressed: () async {
-                            if (_auth.signOut() != null) {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => SignIn()),
-                              );
-                            }
-                          }),
+                        ),
+                      ),
                     ),
                   ],
                 ),
