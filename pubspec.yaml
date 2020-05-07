@@ -65,6 +65,7 @@ flutter:
     - assets/images/background/BG_Register.png
     - assets/images/logo/Logo1.png
 
+    - assets/images/indoormap/lxfirstfloor.jpg
     - assets/images/indoormap/Activity.png
     - assets/images/indoormap/Design.png
     - assets/images/indoormap/DirectedLearning.png
