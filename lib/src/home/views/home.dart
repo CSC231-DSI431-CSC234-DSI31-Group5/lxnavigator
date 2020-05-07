@@ -226,7 +226,9 @@ class _DrawerCodeState extends State<DrawerCode> {
                           title: Text(
                             document['email'] + "\n\n",
                             style:
-                                TextStyle(color: Colors.black, fontSize: 17.0),
+                                TextStyle(color: Colors.black, 
+                                fontSize: 17.0,
+                                fontWeight: FontWeight.bold),
                           ),
                         );
                       }).toList(),
