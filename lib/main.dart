@@ -26,12 +26,11 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return SplashScreen(
-      seconds: 5,
+      seconds: 1,
       navigateAfterSeconds: AfterSplash(),
       title: Text(
         'Welcome In LX Navigator',
         style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-
       ),
       image: Image.asset('assets/images/logo/Logo1.png'),
       imageBackground: AssetImage('assets/images/background/BG_Home.png'),

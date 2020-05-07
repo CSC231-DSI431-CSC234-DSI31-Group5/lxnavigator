@@ -75,10 +75,11 @@ class _RegisterState extends State<Register> {
                             alignment: Alignment(-15, 20),
                             onPressed: () {
                               // widget.toggleView();
-                               Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => SignIn()),
-                          );
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SignIn()),
+                              );
                             }),
                       ]),
                       showLogo(),
@@ -111,7 +112,6 @@ class _RegisterState extends State<Register> {
                           onChanged: (val) {
                             setState(() => email = val.trim());
                           }),
-
                       TextFormField(
                           decoration: InputDecoration(
                             labelText: 'Password',
@@ -132,7 +132,6 @@ class _RegisterState extends State<Register> {
                           onChanged: (val) {
                             setState(() => password = val);
                           }),
-
                       TextFormField(
                           decoration: InputDecoration(
                             labelText: 'Firstname',
@@ -210,10 +209,11 @@ class _RegisterState extends State<Register> {
                                   loading = false;
                                 });
                               } else {
-                                 Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Home()),
-                          );
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Home()),
+                                );
                               }
                             }
                           }),
