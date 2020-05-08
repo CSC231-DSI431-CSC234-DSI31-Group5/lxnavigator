@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lxnavigator/src/app/views/indoormap/activity/activityTen.dart';
+import 'package:lxnavigator/src/app/views/indoormap/activity/activityEleven.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothEight.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothFive.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothFour.dart';
@@ -283,7 +283,7 @@ class _BoothElevenState extends State<BoothEleven> {
                               padding: EdgeInsets.all(8.0),
                               onPressed: () async {
                                  Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => ActivityTen()));
+                              MaterialPageRoute(builder: (context) => ActivityEleven()));
                               }),
                         ),
                       ),
