@@ -57,7 +57,7 @@ class _BoothFourState extends State<BoothFour> {
                     child: ClipRect(
                       child: PhotoView(
                         imageProvider: const AssetImage(
-                            "assets/images/indoormap/lxfirstfloor.jpg"),
+                            "assets/images/indoormap/booth/DirectedLearning.png"),
                         maxScale: PhotoViewComputedScale.covered * 2.0,
                         minScale: PhotoViewComputedScale.contained * 0.8,
                         initialScale: PhotoViewComputedScale.covered,

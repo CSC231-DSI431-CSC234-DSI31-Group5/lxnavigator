@@ -60,9 +60,21 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/logo/flutter_logo.png
-    - assets/images/indoormap/lxfirstfloor.jpg
-    - assets/images/indoormap/booth/Group 2088.png
     - assets/images/avatar/profile.png
+    - assets/images/indoormap/lxfirstfloor.jpg
+
+    - assets/images/indoormap/booth/Activity.png
+    - assets/images/indoormap/booth/Design.png
+    - assets/images/indoormap/booth/DirectedLearning.png
+    - assets/images/indoormap/booth/EISC.png
+    - assets/images/indoormap/booth/EscapeRoom.png
+    - assets/images/indoormap/booth/MC.png
+    - assets/images/indoormap/booth/Peel.png
+    - assets/images/indoormap/booth/Popup.png
+    - assets/images/indoormap/booth/Study.png
+    - assets/images/indoormap/booth/VR.png
+    - assets/images/indoormap/booth/Workshop.png
+    - assets/images/indoormap/booth/Group 2088.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

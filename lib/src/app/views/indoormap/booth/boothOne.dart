@@ -58,7 +58,7 @@ class _BoothOneState extends State<BoothOne> {
                     child: ClipRect(
                       child: PhotoView(
                         imageProvider: const AssetImage(
-                            "assets/images/indoormap/lxfirstfloor.jpg"),
+                            "assets/images/indoormap/booth/VR.png"),
                         maxScale: PhotoViewComputedScale.covered * 2.0,
                         minScale: PhotoViewComputedScale.contained * 0.8,
                         initialScale: PhotoViewComputedScale.covered,
