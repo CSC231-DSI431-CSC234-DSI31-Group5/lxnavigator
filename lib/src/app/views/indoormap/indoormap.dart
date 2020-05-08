@@ -10,6 +10,7 @@ import 'package:lxnavigator/src/app/views/indoormap/booth/boothSix.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothTen.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothThree.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothTwo.dart';
+import 'package:lxnavigator/src/home/views/home.dart';
 import 'package:photo_view/photo_view.dart';
 
 class IndoorMap extends StatefulWidget {
@@ -23,8 +24,19 @@ class _IndoorMapState extends State<IndoorMap> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        iconTheme: IconThemeData(
-          color: Colors.black,
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back_ios,
+            color: Colors.black,
+            size: 30,
+          ),
+          onPressed: () {
+            // widget.toggleView();
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Home()),
+            );
+          },
         ),
         title: Text(
           'Floor Plan',
@@ -283,7 +295,7 @@ class _IndoorMapState extends State<IndoorMap> {
                                   side: BorderSide(color: Colors.black54),
                                   borderRadius: BorderRadius.circular(15.0),
                                 ),
-                                color: Colors.orange[700],
+                                color: Colors.pink[200],
                                 child: Text(
                                   'MC. SHOW ROOM',
                                   style: TextStyle(color: Colors.white),
@@ -306,7 +318,7 @@ class _IndoorMapState extends State<IndoorMap> {
                                   side: BorderSide(color: Colors.black54),
                                   borderRadius: BorderRadius.circular(15.0),
                                 ),
-                                color: Colors.orange[700],
+                                color: Colors.pink[200],
                                 child: Text(
                                   'LX BUILDING STUDY',
                                   style: TextStyle(color: Colors.white),

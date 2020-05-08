@@ -10,6 +10,7 @@ import 'package:lxnavigator/src/app/views/indoormap/booth/boothSix.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothTen.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothThree.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothTwo.dart';
+import 'package:lxnavigator/src/home/views/home.dart';
 import 'package:photo_view/photo_view.dart';
 
 //MC. Show Room Booth
@@ -22,276 +23,413 @@ class _BoothEightState extends State<BoothEight> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.brown[50],
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('LX Navigator'),
-        backgroundColor: Colors.brown[400],
-        elevation: 0.0,
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back_ios,
+            color: Colors.black,
+            size: 30,
+          ),
+          onPressed: () {
+            // widget.toggleView();
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Home()),
+            );
+          },
+        ),
+        title: Text(
+          'Floor Plan',
+          style: TextStyle(color: Colors.black),
+        ),
+        backgroundColor: Colors.white,
+        elevation: 3.0,
       ),
- body: Column(
+      body: Column(
         children: <Widget>[
           Expanded(
-            child: Column(
-              children: <Widget>[
-                Container(
-                  height: 250.0,
-                  child: ClipRect(
-                    child: PhotoView(
-                      imageProvider: const AssetImage(
-                          "assets/images/indoormap/lxfirstfloor.jpg"),
-                      maxScale: PhotoViewComputedScale.covered * 2.0,
-                      minScale: PhotoViewComputedScale.contained * 0.8,
-                      initialScale: PhotoViewComputedScale.covered,
+            child: SingleChildScrollView(
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    height: 250.0,
+                    child: ClipRect(
+                      child: PhotoView(
+                        imageProvider: const AssetImage(
+                            "assets/images/indoormap/lxfirstfloor.jpg"),
+                        maxScale: PhotoViewComputedScale.covered * 2.0,
+                        minScale: PhotoViewComputedScale.contained * 0.8,
+                        initialScale: PhotoViewComputedScale.covered,
+                      ),
                     ),
                   ),
-                ),
 
-                //column 0
-                Container(
-                  padding:
-                      EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
-                ),
-                //column 1
-                Container(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Expanded(
-                        child: new Center(
-                          child: RaisedButton(
-                              color: Colors.pink[400],
-                              child: Text(
-                                'VR AR MR',
-                                style: TextStyle(color: Colors.white),
-                              ),
-                              padding: EdgeInsets.all(8.0),
-                              onPressed: () async {
-                                Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => BoothOne()));
-                              }),
-                        ),
-                      ),
-                      Expanded(
-                        child: new Center(
-                          child: RaisedButton(
-                              color: Colors.pink[400],
-                              child: Text(
-                                'WORKSHOP',
-                                style: TextStyle(color: Colors.white),
-                              ),
-                              padding: EdgeInsets.all(8.0),
-                              onPressed: () async {
-                              Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => BoothTwo()));
-                              }),
-                        ),
-                      ),
-                      Expanded(
-                        child: new Center(
-                          child: RaisedButton(
-                              color: Colors.pink[400],
-                              child: Text(
-                                'DESIGN STUDIES',
-                                style: TextStyle(color: Colors.white),
-                              ),
-                              padding: EdgeInsets.all(8.0),
-                              onPressed: () async {
-                                 Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => BoothThree()));
-
-                              }),
-                        ),
-                      ),
-                    ],
+                  //column 0
+                  Container(
+                    padding:
+                        EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
                   ),
-                ),
 
-                //column 2
-                Container(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Expanded(
-                        child: new Center(
-                          child: RaisedButton(
-                              color: Colors.pink[400],
-                              child: Text(
-                                'SELF DIRECTED LEARNING',
-                                style: TextStyle(color: Colors.white),
-                              ),
-                              padding: EdgeInsets.all(8.0),
-                              onPressed: () async {
-                                 Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => BoothFour()));
-
-                              }),
+                  //column 1
+                  Container(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        SizedBox(width: 5.0),
+                        ButtonTheme(
+                          minWidth: 100,
+                          child: new Center(
+                            child: RaisedButton(
+                                shape: RoundedRectangleBorder(
+                                  side: BorderSide(color: Colors.black54),
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
+                                color: Colors.yellow[600],
+                                child: Text(
+                                  'VR AR MR',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                padding: EdgeInsets.all(0.0),
+                                onPressed: () async {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => BoothOne()));
+                                }),
+                          ),
                         ),
-                      ),
-                      //
-                      Expanded(
-                        child: new Center(
-                          child: RaisedButton(
-                              color: Colors.pink[400],
-                              child: Text(
-                                'ACTIVE EXHIBTION',
-                                style: TextStyle(color: Colors.white),
-                              ),
-                              padding: EdgeInsets.all(8.0),
-                              onPressed: () async {
-                              Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => BoothFive()));
-
-                              }),
+                        SizedBox(width: 7.0),
+                        ButtonTheme(
+                          minWidth: 100,
+                          child: new Center(
+                            child: RaisedButton(
+                                shape: RoundedRectangleBorder(
+                                  side: BorderSide(color: Colors.black54),
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
+                                color: Colors.yellow[600],
+                                child: Text(
+                                  'WORKSHOP',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                padding: EdgeInsets.all(8.0),
+                                onPressed: () async {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => BoothTwo()));
+                                }),
+                          ),
                         ),
-                      ),
-                    ],
+                        SizedBox(width: 7.0),
+                        ButtonTheme(
+                          minWidth: 150,
+                          child: new Center(
+                            child: RaisedButton(
+                                shape: RoundedRectangleBorder(
+                                  side: BorderSide(color: Colors.black54),
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
+                                color: Colors.yellow[600],
+                                child: Text(
+                                  'DESIGN STUDIES',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                padding: EdgeInsets.all(8.0),
+                                onPressed: () async {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => BoothThree()));
+                                }),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
 
-                //column 3
-                Container(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Expanded(
-                        child: new Center(
-                          child: RaisedButton(
-                              color: Colors.pink[400],
-                              child: Text(
-                                'ESCAPE ROOM',
-                                style: TextStyle(color: Colors.white),
-                              ),
-                              padding: EdgeInsets.all(8.0),
-                              onPressed: () async {
-                                 Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => BoothSix()));
-
-                              }),
+                  //column 2
+                  Container(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        SizedBox(width: 5.0),
+                        ButtonTheme(
+                          minWidth: 220,
+                          child: new Center(
+                            child: RaisedButton(
+                                shape: RoundedRectangleBorder(
+                                  side: BorderSide(color: Colors.black54),
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
+                                color: Colors.yellow[600],
+                                child: Text(
+                                  'SELF DIRECTED LEARNING',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                padding: EdgeInsets.all(8.0),
+                                onPressed: () async {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => BoothFour()));
+                                }),
+                          ),
                         ),
-                      ),
-                      Expanded(
-                        child: new Center(
-                          child: RaisedButton(
-                              color: Colors.pink[400],
-                              child: Text(
-                                'PEEL AND WATCH',
-                                style: TextStyle(color: Colors.white),
-                              ),
-                              padding: EdgeInsets.all(8.0),
-                              onPressed: () async {
-                                 Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => BoothSeven()));
-
-                              }),
+                        //
+                        SizedBox(width: 7.0),
+                        ButtonTheme(
+                          minWidth: 100,
+                          child: new Center(
+                            child: RaisedButton(
+                                shape: RoundedRectangleBorder(
+                                  side: BorderSide(color: Colors.black54),
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
+                                color: Colors.yellow[600],
+                                child: Text(
+                                  'ACTIVE EXHIBTION',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                padding: EdgeInsets.all(8.0),
+                                onPressed: () async {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => BoothFive()));
+                                }),
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-
-                //column 4
-                Container(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Expanded(
-                        child: new Center(
-                          child: RaisedButton(
-                              color: Colors.black,
-                              child: Text(
-                                'MC. SHOW ROOM',
-                                style: TextStyle(color: Colors.white),
-                              ),
-                              padding: EdgeInsets.all(8.0),
-                              onPressed: () async {
-                              //    Navigator.push(context,
-                              // MaterialPageRoute(builder: (context) => BoothEight()));
-                              }),
-                        ),
+                  new Padding(
+                    padding: new EdgeInsets.all(5.0),
+                    child: new Text(
+                      '_______________________________________________________________________________',
+                      style: TextStyle(
+                        color: Colors.black54,
+                        fontSize: 10.0,
+//                        fontWeight: FontWeight.bold
                       ),
-                      Expanded(
-                        child: new Center(
-                          child: RaisedButton(
-                              color: Colors.pink[400],
-                              child: Text(
-                                'LX BUILDING STUDY',
-                                style: TextStyle(color: Colors.white),
-                              ),
-                              padding: EdgeInsets.all(8.0),
-                              onPressed: () async {
-                                 Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => BoothNine()));
-
-                              }),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
-                ),
-                //column 5
-                Container(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Expanded(
-                        child: new Center(
-                          child: RaisedButton(
-                              color: Colors.pink[400],
-                              child: Text(
-                                'ENTREPRENEUR INNOVATION SHOW CART',
-                                style: TextStyle(color: Colors.white),
-                              ),
-                              padding: EdgeInsets.all(8.0),
-                              onPressed: () async {
-                                 Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => BoothTen()));
 
-                              }),
+                  //column 3
+                  Container(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        SizedBox(width: 5.0),
+                        ButtonTheme(
+                          minWidth: 160,
+                          child: new Center(
+                            child: RaisedButton(
+                                shape: RoundedRectangleBorder(
+                                  side: BorderSide(color: Colors.black54),
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
+                                color: Colors.orangeAccent,
+                                child: Text(
+                                  'ESCAPE ROOM',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                padding: EdgeInsets.all(8.0),
+                                onPressed: () async {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => BoothSix()));
+                                }),
+                          ),
                         ),
-                      ),
-                    ],
+                        SizedBox(width: 7.0),
+                        ButtonTheme(
+                          minWidth: 200,
+                          child: new Center(
+                            child: RaisedButton(
+                                shape: RoundedRectangleBorder(
+                                  side: BorderSide(color: Colors.black54),
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
+                                color: Colors.orangeAccent,
+                                child: Text(
+                                  'PEEL AND WATCH',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                padding: EdgeInsets.all(8.0),
+                                onPressed: () async {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => BoothSeven()));
+                                }),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                //column 6
-                Container(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Expanded(
-                        child: new Center(
-                          child: RaisedButton(
-                              color: Colors.pink[400],
-                              child: Text(
-                                'POPUP EXHIBITION',
-                                style: TextStyle(color: Colors.white),
-                              ),
-                              padding: EdgeInsets.all(8.0),
-                              onPressed: () async {
-                                 Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => BoothEleven()));
-                              }),
-                        ),
+                  new Padding(
+                    padding: new EdgeInsets.all(5.0),
+                    child: new Text(
+                      '_______________________________________________________________________________',
+                      style: TextStyle(
+                        color: Colors.black54,
+                        fontSize: 10.0,
+//                        fontWeight: FontWeight.bold
                       ),
-                      Expanded(
-                        child: new Center(
-                          child: RaisedButton(
-                              color: Colors.pink[400],
-                              child: Text(
-                                'Detail',
-                                style: TextStyle(color: Colors.white),
-                              ),
-                              padding: EdgeInsets.all(8.0),
-                              onPressed: () async {
-                                 Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => ActivityEight()));
-                              }),
-                        ),
-                      ),
-                   ],
+                    ),
                   ),
-                ),
-                //column 6
-              ],
+
+                  //column 4
+                  Container(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        SizedBox(width: 5.0),
+                        ButtonTheme(
+                          minWidth: 180,
+                          child: new Center(
+                            child: RaisedButton(
+                                shape: RoundedRectangleBorder(
+                                  side: BorderSide(color: Colors.black54),
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
+                                color: Colors.pink[700],
+                                child: Text(
+                                  'MC. SHOW ROOM',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                padding: EdgeInsets.all(8.0),
+                                onPressed: () async {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => BoothEight()));
+                                }),
+                          ),
+                        ),
+                        SizedBox(width: 7.0),
+                        ButtonTheme(
+                          minWidth: 180,
+                          child: new Center(
+                            child: RaisedButton(
+                                shape: RoundedRectangleBorder(
+                                  side: BorderSide(color: Colors.black54),
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
+                                color: Colors.pink[200],
+                                child: Text(
+                                  'LX BUILDING STUDY',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                padding: EdgeInsets.all(8.0),
+                                onPressed: () async {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => BoothNine()));
+                                }),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  new Padding(
+                    padding: new EdgeInsets.all(5.0),
+                    child: new Text(
+                      '_______________________________________________________________________________',
+                      style: TextStyle(
+                        color: Colors.black54,
+                        fontSize: 10.0,
+//                        fontWeight: FontWeight.bold
+                      ),
+                    ),
+                  ),
+                  //column 5
+                  Container(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        SizedBox(width: 5.0),
+                        ButtonTheme(
+                          minWidth: 360,
+                          child: new Center(
+                            child: RaisedButton(
+                                shape: RoundedRectangleBorder(
+                                  side: BorderSide(color: Colors.black54),
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
+                                color: Colors.blueGrey[500],
+                                child: Text(
+                                  'ENTREPRENEUR INNOVATION SHOW CART',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                padding: EdgeInsets.all(8.0),
+                                onPressed: () async {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => BoothTen()));
+                                }),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  //column 6
+                  Container(
+                    child: Row(
+                      children: <Widget>[
+                        SizedBox(width: 30.0),
+                        ButtonTheme(
+                          minWidth: 200,
+                          child: new Center(
+                            child: RaisedButton(
+                                shape: RoundedRectangleBorder(
+                                  side: BorderSide(color: Colors.black54),
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
+                                color: Colors.blueGrey[500],
+                                child: Text(
+                                  'POPUP EXHIBITION',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                padding: EdgeInsets.all(8.0),
+                                onPressed: () async {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => BoothEleven()));
+                                }),
+                          ),
+                        ),
+                        Expanded(
+                          child: new Center(
+                            child: RaisedButton(
+                                color: Colors.pink[400],
+                                child: Text(
+                                  'Detail',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                padding: EdgeInsets.all(8.0),
+                                onPressed: () async {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              ActivityEight()));
+                                }),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  //column 6
+                ],
+              ),
             ),
           ),
         ],
