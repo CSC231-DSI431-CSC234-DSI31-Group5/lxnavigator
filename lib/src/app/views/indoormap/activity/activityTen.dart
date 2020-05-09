@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothTen.dart';
-import 'package:lxnavigator/src/app/views/indoormap/booth/boothThree.dart';
 
 ////Entrepreneur Innovation Show Cart Booth
 class ActivityTen extends StatefulWidget {
@@ -10,8 +9,8 @@ class ActivityTen extends StatefulWidget {
 }
 
 class _ActivityTenState extends State<ActivityTen> {
-    @override
-   Widget build(BuildContext context) {
+  @override
+  Widget build(BuildContext context) {
     return StreamBuilder<DocumentSnapshot>(
         stream: Firestore.instance
             .collection('rooms')
@@ -25,7 +24,16 @@ class _ActivityTenState extends State<ActivityTen> {
           if (snapshot.hasError) return Text('Error: ${snapshot.error}');
           switch (snapshot.connectionState) {
             case ConnectionState.waiting:
-              return new Text('Loading...');
+              return Scaffold(
+                backgroundColor: Colors.grey,
+                body: Center(
+                  child: Text(
+                    "Loading ...",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.white, fontSize: 40),
+                  ),
+                ),
+              );
             default:
               return Scaffold(
                 backgroundColor: Colors.grey,
@@ -158,8 +166,7 @@ class _ActivityTenState extends State<ActivityTen> {
                                               color: Colors.white,
                                             )),
                                         TextSpan(
-                                            text: 'Activity Details'+
-                                                '\n\n',
+                                            text: 'Activity Details' + '\n\n',
                                             style: TextStyle(
                                               fontWeight: FontWeight.bold,
                                               fontSize: 20.0,

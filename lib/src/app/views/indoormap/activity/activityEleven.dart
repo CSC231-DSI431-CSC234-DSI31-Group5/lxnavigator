@@ -9,8 +9,8 @@ class ActivityEleven extends StatefulWidget {
 }
 
 class _ActivityElevenState extends State<ActivityEleven> {
-    @override
-    Widget build(BuildContext context) {
+  @override
+  Widget build(BuildContext context) {
     return StreamBuilder<DocumentSnapshot>(
         stream: Firestore.instance
             .collection('rooms')
@@ -24,7 +24,16 @@ class _ActivityElevenState extends State<ActivityEleven> {
           if (snapshot.hasError) return Text('Error: ${snapshot.error}');
           switch (snapshot.connectionState) {
             case ConnectionState.waiting:
-              return new Text('Loading...');
+              return Scaffold(
+                backgroundColor: Colors.grey,
+                body: Center(
+                  child: Text(
+                    "Loading ...",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.white, fontSize: 40),
+                  ),
+                ),
+              );
             default:
               return Scaffold(
                 backgroundColor: Colors.grey,
@@ -157,8 +166,7 @@ class _ActivityElevenState extends State<ActivityEleven> {
                                               color: Colors.white,
                                             )),
                                         TextSpan(
-                                            text: 'Activity Details'+
-                                                '\n\n',
+                                            text: 'Activity Details' + '\n\n',
                                             style: TextStyle(
                                               fontWeight: FontWeight.bold,
                                               fontSize: 20.0,

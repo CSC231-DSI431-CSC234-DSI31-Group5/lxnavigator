@@ -24,7 +24,15 @@ class _ActivityFourState extends State<ActivityFour> {
           if (snapshot.hasError) return Text('Error: ${snapshot.error}');
           switch (snapshot.connectionState) {
             case ConnectionState.waiting:
-              return new Text('Loading...');
+              return Scaffold(
+                backgroundColor: Colors.grey,
+                body: Center(
+                  child: Text(
+                    "Loading ...",
+                    textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontSize: 40),
+                  ),
+                ),
+              );
             default:
               return Scaffold(
                 backgroundColor: Colors.grey,
