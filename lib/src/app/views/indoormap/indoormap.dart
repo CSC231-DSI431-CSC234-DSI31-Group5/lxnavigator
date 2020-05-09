@@ -52,6 +52,7 @@ class _IndoorMapState extends State<IndoorMap> {
                     ),
                   ),
 
+<<<<<<< HEAD
                   //column 0
                   Container(
                     padding:
@@ -131,11 +132,73 @@ class _IndoorMapState extends State<IndoorMap> {
                                           builder: (context) => BoothThree()));
                                 }),
                           ),
+=======
+                //column 0
+                Container(
+                  padding:
+                  EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
+                ),
+                //column 1
+                Container(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Expanded(
+                        child: new Center(
+                          child: RaisedButton(
+                              color: Colors.pink[400],
+                              child: Text(
+                                'VR AR MR',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              padding: EdgeInsets.all(8.0),
+                              onPressed: () async {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => BoothOne()));
+                              }),
+                        ),
+                      ),
+                      Expanded(
+                        child: new Center(
+                          child: RaisedButton(
+                              color: Colors.pink[400],
+                              child: Text(
+                                'WORKSHOP',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              padding: EdgeInsets.all(8.0),
+                              onPressed: () async {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => BoothTwo()));
+                              }),
+                        ),
+                      ),
+                      Expanded(
+                        child: new Center(
+                          child: RaisedButton(
+                              color: Colors.pink[400],
+                              child: Text(
+                                'DESIGN STUDIES',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              padding: EdgeInsets.all(8.0),
+                              onPressed: () async {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => BoothThree()));
+                              }),
+>>>>>>> development
                         ),
                       ],
                     ),
                   ),
 
+<<<<<<< HEAD
                   //column 2
                   Container(
                     child: Row(
@@ -187,6 +250,46 @@ class _IndoorMapState extends State<IndoorMap> {
                                           builder: (context) => BoothFive()));
                                 }),
                           ),
+=======
+                //column 2
+                Container(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Expanded(
+                        child: new Center(
+                          child: RaisedButton(
+                              color: Colors.pink[400],
+                              child: Text(
+                                'SELF DIRECTED LEARNING',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              padding: EdgeInsets.all(8.0),
+                              onPressed: () async {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => BoothFour()));
+                              }),
+                        ),
+                      ),
+                      //
+                      Expanded(
+                        child: new Center(
+                          child: RaisedButton(
+                              color: Colors.pink[400],
+                              child: Text(
+                                'ACTIVE EXHIBTION',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              padding: EdgeInsets.all(8.0),
+                              onPressed: () async {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => BoothFive()));
+                              }),
+>>>>>>> development
                         ),
                       ],
                     ),
@@ -203,6 +306,7 @@ class _IndoorMapState extends State<IndoorMap> {
                     ),
                   ),
 
+<<<<<<< HEAD
                   //column 3
                   Container(
                     child: Row(
@@ -253,6 +357,45 @@ class _IndoorMapState extends State<IndoorMap> {
                                           builder: (context) => BoothSeven()));
                                 }),
                           ),
+=======
+                //column 3
+                Container(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Expanded(
+                        child: new Center(
+                          child: RaisedButton(
+                              color: Colors.pink[400],
+                              child: Text(
+                                'ESCAPE ROOM',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              padding: EdgeInsets.all(8.0),
+                              onPressed: () async {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => BoothSix()));
+                              }),
+                        ),
+                      ),
+                      Expanded(
+                        child: new Center(
+                          child: RaisedButton(
+                              color: Colors.pink[400],
+                              child: Text(
+                                'PEEL AND WATCH',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              padding: EdgeInsets.all(8.0),
+                              onPressed: () async {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => BoothSeven()));
+                              }),
+>>>>>>> development
                         ),
                       ],
                     ),
@@ -269,6 +412,7 @@ class _IndoorMapState extends State<IndoorMap> {
                     ),
                   ),
 
+<<<<<<< HEAD
                   //column 4
                   Container(
                     child: Row(
@@ -319,10 +463,50 @@ class _IndoorMapState extends State<IndoorMap> {
                                           builder: (context) => BoothNine()));
                                 }),
                           ),
+=======
+                //column 4
+                Container(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Expanded(
+                        child: new Center(
+                          child: RaisedButton(
+                              color: Colors.pink[400],
+                              child: Text(
+                                'MC. SHOW ROOM',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              padding: EdgeInsets.all(8.0),
+                              onPressed: () async {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => BoothEight()));
+                              }),
+                        ),
+                      ),
+                      Expanded(
+                        child: new Center(
+                          child: RaisedButton(
+                              color: Colors.pink[400],
+                              child: Text(
+                                'LX BUILDING STUDY',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              padding: EdgeInsets.all(8.0),
+                              onPressed: () async {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => BoothNine()));
+                              }),
+>>>>>>> development
                         ),
                       ],
                     ),
                   ),
+<<<<<<< HEAD
 
                   new Padding(
                     padding: new EdgeInsets.all(5.0),
@@ -332,9 +516,34 @@ class _IndoorMapState extends State<IndoorMap> {
                         color: Colors.black54,
                         fontSize: 10.0,
 //                        fontWeight: FontWeight.bold
+=======
+                ),
+                //column 5
+                Container(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Expanded(
+                        child: new Center(
+                          child: RaisedButton(
+                              color: Colors.pink[400],
+                              child: Text(
+                                'ENTREPRENEUR INNOVATION SHOW CART',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              padding: EdgeInsets.all(8.0),
+                              onPressed: () async {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => BoothTen()));
+                              }),
+                        ),
+>>>>>>> development
                       ),
                     ),
                   ),
+<<<<<<< HEAD
                   //column 5
                   Container(
                     child: Row(
@@ -365,6 +574,32 @@ class _IndoorMapState extends State<IndoorMap> {
                         ),
                       ],
                     ),
+=======
+                ),
+                //column 6
+                Container(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Expanded(
+                        child: new Center(
+                          child: RaisedButton(
+                              color: Colors.pink[400],
+                              child: Text(
+                                'POPUP EXHIBITION',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              padding: EdgeInsets.all(8.0),
+                              onPressed: () async {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => BoothEleven()));
+                              }),
+                        ),
+                      ),
+                    ],
+>>>>>>> development
                   ),
                   //column 6
                   Container(
