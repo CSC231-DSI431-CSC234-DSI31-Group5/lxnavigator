@@ -20,7 +20,6 @@ class BoothOne extends StatefulWidget {
 }
 
 class _BoothOneState extends State<BoothOne> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,7 +68,7 @@ class _BoothOneState extends State<BoothOne> {
                   //column 0
                   Container(
                     padding:
-                    EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
+                        EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
                   ),
 
                   //column 1
@@ -345,7 +344,6 @@ class _BoothOneState extends State<BoothOne> {
                       style: TextStyle(
                         color: Colors.black54,
                         fontSize: 10.0,
-//                        fontWeight: FontWeight.bold
                       ),
                     ),
                   ),
@@ -407,24 +405,18 @@ class _BoothOneState extends State<BoothOne> {
                                 }),
                           ),
                         ),
-                        Expanded(
-                          child: new Center(
-                            child: RaisedButton(
-                                color: Colors.pink[400],
-                                child: Text(
-                                  'Detail',
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                                padding: EdgeInsets.all(8.0),
-                                onPressed: () async {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              ActivityOne()));
-                                }),
-                          ),
-                        ),
+                        SizedBox(width: 70.0),
+                        FlatButton(
+                            child: Image.asset(
+                                'assets/images/indoormap/button.png',
+                                height: 70.0,
+                                width: 70.0),
+                            onPressed: () async {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ActivityOne()));
+                            }),
                       ],
                     ),
                   ),

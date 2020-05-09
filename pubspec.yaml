@@ -62,6 +62,7 @@ flutter:
     - assets/images/logo/flutter_logo.png
     - assets/images/avatar/profile.png
     - assets/images/indoormap/lxfirstfloor.jpg
+    - assets/images/indoormap/button.png
 
     - assets/images/indoormap/booth/Activity.png
     - assets/images/indoormap/booth/Design.png

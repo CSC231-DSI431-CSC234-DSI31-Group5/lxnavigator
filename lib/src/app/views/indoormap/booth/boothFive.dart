@@ -407,24 +407,18 @@ class _BoothFiveState extends State<BoothFive> {
                                 }),
                           ),
                         ),
-                        Expanded(
-                          child: new Center(
-                            child: RaisedButton(
-                                color: Colors.pink[400],
-                                child: Text(
-                                  'Detail',
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                                padding: EdgeInsets.all(8.0),
-                                onPressed: () async {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              ActivityFive()));
-                                }),
-                          ),
-                        ),
+                        SizedBox(width: 70.0),
+                        FlatButton(
+                            child: Image.asset(
+                                'assets/images/indoormap/button.png',
+                                height: 70.0,
+                                width: 70.0),
+                            onPressed: () async {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ActivityFive()));
+                            }),
                       ],
                     ),
                   ),
