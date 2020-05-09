@@ -68,7 +68,7 @@ class _BoothTenState extends State<BoothTen> {
                   //column 0
                   Container(
                     padding:
-                        EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
+                        EdgeInsets.only(bottom: 20.0, left: 50.0, right: 50.0),
                   ),
 
                   //column 1
@@ -92,7 +92,7 @@ class _BoothTenState extends State<BoothTen> {
                                 ),
                                 padding: EdgeInsets.all(0.0),
                                 onPressed: () async {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => BoothOne()));
@@ -115,7 +115,7 @@ class _BoothTenState extends State<BoothTen> {
                                 ),
                                 padding: EdgeInsets.all(8.0),
                                 onPressed: () async {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => BoothTwo()));
@@ -138,7 +138,7 @@ class _BoothTenState extends State<BoothTen> {
                                 ),
                                 padding: EdgeInsets.all(8.0),
                                 onPressed: () async {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => BoothThree()));
@@ -170,7 +170,7 @@ class _BoothTenState extends State<BoothTen> {
                                 ),
                                 padding: EdgeInsets.all(8.0),
                                 onPressed: () async {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => BoothFour()));
@@ -194,7 +194,7 @@ class _BoothTenState extends State<BoothTen> {
                                 ),
                                 padding: EdgeInsets.all(8.0),
                                 onPressed: () async {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => BoothFive()));
@@ -237,7 +237,7 @@ class _BoothTenState extends State<BoothTen> {
                                 ),
                                 padding: EdgeInsets.all(8.0),
                                 onPressed: () async {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => BoothSix()));
@@ -260,7 +260,7 @@ class _BoothTenState extends State<BoothTen> {
                                 ),
                                 padding: EdgeInsets.all(8.0),
                                 onPressed: () async {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => BoothSeven()));
@@ -303,7 +303,7 @@ class _BoothTenState extends State<BoothTen> {
                                 ),
                                 padding: EdgeInsets.all(8.0),
                                 onPressed: () async {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => BoothEight()));
@@ -326,7 +326,7 @@ class _BoothTenState extends State<BoothTen> {
                                 ),
                                 padding: EdgeInsets.all(8.0),
                                 onPressed: () async {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => BoothNine()));
@@ -369,7 +369,7 @@ class _BoothTenState extends State<BoothTen> {
                                 ),
                                 padding: EdgeInsets.all(8.0),
                                 onPressed: () async {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => BoothTen()));
@@ -399,7 +399,7 @@ class _BoothTenState extends State<BoothTen> {
                                 ),
                                 padding: EdgeInsets.all(8.0),
                                 onPressed: () async {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => BoothEleven()));
@@ -413,7 +413,7 @@ class _BoothTenState extends State<BoothTen> {
                                 height: 70.0,
                                 width: 70.0),
                             onPressed: () async {
-                              Navigator.push(
+                              Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) => ActivityTen()));

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothEight.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothEleven.dart';
@@ -67,7 +68,7 @@ class _IndoorMapState extends State<IndoorMap> {
                   //column 0
                   Container(
                     padding:
-                        EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
+                        EdgeInsets.only(bottom: 20.0, left: 50.0, right: 50.0),
                   ),
 
                   //column 1
@@ -91,7 +92,7 @@ class _IndoorMapState extends State<IndoorMap> {
                                 ),
                                 padding: EdgeInsets.all(0.0),
                                 onPressed: () async {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => BoothOne()));
@@ -114,7 +115,7 @@ class _IndoorMapState extends State<IndoorMap> {
                                 ),
                                 padding: EdgeInsets.all(8.0),
                                 onPressed: () async {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => BoothTwo()));
@@ -137,7 +138,7 @@ class _IndoorMapState extends State<IndoorMap> {
                                 ),
                                 padding: EdgeInsets.all(8.0),
                                 onPressed: () async {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => BoothThree()));
@@ -169,7 +170,7 @@ class _IndoorMapState extends State<IndoorMap> {
                                 ),
                                 padding: EdgeInsets.all(8.0),
                                 onPressed: () async {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => BoothFour()));
@@ -193,7 +194,7 @@ class _IndoorMapState extends State<IndoorMap> {
                                 ),
                                 padding: EdgeInsets.all(8.0),
                                 onPressed: () async {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => BoothFive()));
@@ -236,7 +237,7 @@ class _IndoorMapState extends State<IndoorMap> {
                                 ),
                                 padding: EdgeInsets.all(8.0),
                                 onPressed: () async {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => BoothSix()));
@@ -259,7 +260,7 @@ class _IndoorMapState extends State<IndoorMap> {
                                 ),
                                 padding: EdgeInsets.all(8.0),
                                 onPressed: () async {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => BoothSeven()));
@@ -302,7 +303,7 @@ class _IndoorMapState extends State<IndoorMap> {
                                 ),
                                 padding: EdgeInsets.all(8.0),
                                 onPressed: () async {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => BoothEight()));
@@ -325,7 +326,7 @@ class _IndoorMapState extends State<IndoorMap> {
                                 ),
                                 padding: EdgeInsets.all(8.0),
                                 onPressed: () async {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => BoothNine()));
@@ -368,7 +369,7 @@ class _IndoorMapState extends State<IndoorMap> {
                                 ),
                                 padding: EdgeInsets.all(8.0),
                                 onPressed: () async {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => BoothTen()));
@@ -378,6 +379,7 @@ class _IndoorMapState extends State<IndoorMap> {
                       ],
                     ),
                   ),
+                  new Padding(padding: EdgeInsets.all(5.0)),
                   //column 6
                   Container(
                     child: Row(
@@ -398,7 +400,7 @@ class _IndoorMapState extends State<IndoorMap> {
                                 ),
                                 padding: EdgeInsets.all(8.0),
                                 onPressed: () async {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => BoothEleven()));

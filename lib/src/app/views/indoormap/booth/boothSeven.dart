@@ -69,7 +69,7 @@ class _BoothSevenState extends State<BoothSeven> {
                   //column 0
                   Container(
                     padding:
-                        EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
+                        EdgeInsets.only(bottom: 20.0, left: 50.0, right: 50.0),
                   ),
 
                   //column 1
@@ -93,7 +93,7 @@ class _BoothSevenState extends State<BoothSeven> {
                                 ),
                                 padding: EdgeInsets.all(0.0),
                                 onPressed: () async {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => BoothOne()));
@@ -116,7 +116,7 @@ class _BoothSevenState extends State<BoothSeven> {
                                 ),
                                 padding: EdgeInsets.all(8.0),
                                 onPressed: () async {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => BoothTwo()));
@@ -139,7 +139,7 @@ class _BoothSevenState extends State<BoothSeven> {
                                 ),
                                 padding: EdgeInsets.all(8.0),
                                 onPressed: () async {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => BoothThree()));
@@ -171,7 +171,7 @@ class _BoothSevenState extends State<BoothSeven> {
                                 ),
                                 padding: EdgeInsets.all(8.0),
                                 onPressed: () async {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => BoothFour()));
@@ -195,7 +195,7 @@ class _BoothSevenState extends State<BoothSeven> {
                                 ),
                                 padding: EdgeInsets.all(8.0),
                                 onPressed: () async {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => BoothFive()));
@@ -238,7 +238,7 @@ class _BoothSevenState extends State<BoothSeven> {
                                 ),
                                 padding: EdgeInsets.all(8.0),
                                 onPressed: () async {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => BoothSix()));
@@ -261,7 +261,7 @@ class _BoothSevenState extends State<BoothSeven> {
                                 ),
                                 padding: EdgeInsets.all(8.0),
                                 onPressed: () async {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => BoothSeven()));
@@ -304,7 +304,7 @@ class _BoothSevenState extends State<BoothSeven> {
                                 ),
                                 padding: EdgeInsets.all(8.0),
                                 onPressed: () async {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => BoothEight()));
@@ -327,7 +327,7 @@ class _BoothSevenState extends State<BoothSeven> {
                                 ),
                                 padding: EdgeInsets.all(8.0),
                                 onPressed: () async {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => BoothNine()));
@@ -370,7 +370,7 @@ class _BoothSevenState extends State<BoothSeven> {
                                 ),
                                 padding: EdgeInsets.all(8.0),
                                 onPressed: () async {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => BoothTen()));
@@ -400,7 +400,7 @@ class _BoothSevenState extends State<BoothSeven> {
                                 ),
                                 padding: EdgeInsets.all(8.0),
                                 onPressed: () async {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => BoothEleven()));
@@ -414,7 +414,7 @@ class _BoothSevenState extends State<BoothSeven> {
                                 height: 70.0,
                                 width: 70.0),
                             onPressed: () async {
-                              Navigator.push(
+                              Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) => ActivitySeven()));
