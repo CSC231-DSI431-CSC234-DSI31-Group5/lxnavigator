@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:lxnavigator/src/app/views/indoormap/booth/boothEleven.dart';
 
 //Popup Exhibition Booth
 class ActivityEleven extends StatefulWidget {
@@ -26,7 +27,8 @@ class _ActivityElevenState extends State<ActivityEleven> {
               return new Text('Loading...');
             default:
               return Scaffold(
-                appBar: AppBar(title: Text('Activity')),
+                backgroundColor: Colors.grey,
+//                appBar: AppBar(title: Text('Activity')),
                 body: Column(
                   children: <Widget>[
                     Expanded(
@@ -38,26 +40,47 @@ class _ActivityElevenState extends State<ActivityEleven> {
                                 vertical: 20.0, horizontal: 50.0),
                           ),
                           Container(
-                            child: Row(
+                            child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
+                                SizedBox(
+                                  height: 30.0,
+                                  width: 5.0,
+                                ),
+                                Row(children: [
+                                  IconButton(
+                                      icon: Icon(Icons.arrow_back_ios),
+                                      color: Colors.white,
+                                      iconSize: 30,
+                                      onPressed: () async {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    BoothEleven()));
+                                      }),
+                                ]),
                                 Expanded(
                                   child: new Center(
                                     child: Container(
                                       height: 450,
                                       width: 330,
                                       decoration: BoxDecoration(
-                                        color: Colors.yellow,
-                                        border: Border.all(
-                                            color: Colors.black, width: 3),
+                                        gradient: LinearGradient(
+                                          colors: [
+                                            Colors.red[600],
+                                            Colors.deepOrangeAccent
+                                          ],
+                                          begin: Alignment.topCenter,
+                                          end: Alignment.bottomCenter,
+                                        ),
                                         borderRadius: BorderRadius.all(
-                                            Radius.circular(18)
-                                            ),
-                                            
+                                            Radius.circular(18)),
                                       ),
                                     ),
                                   ),
                                 ),
+                                SizedBox(height: 50.0),
                               ],
                             ),
                           ),
@@ -67,18 +90,20 @@ class _ActivityElevenState extends State<ActivityEleven> {
                             children: <Widget>[
                               Container(
                                 padding: EdgeInsets.symmetric(
-                                    vertical: 70.0, horizontal: 1.0),
-                                alignment: Alignment(0.9, -0.5),
+                                    vertical: 90.0, horizontal: 1.0),
+                                alignment: Alignment(0.9, -10),
                                 child: Column(
                                   children: <Widget>[
                                     Container(
+                                      child: Image.asset(
+                                          'assets/images/logo/detail.png',
+                                          height: 70.0,
+                                          width: 70.0),
                                       height: 110,
                                       width: 110,
                                       decoration: BoxDecoration(
-                                        color: Colors.orange,
+                                        color: Colors.deepOrangeAccent[100],
                                         shape: BoxShape.circle,
-                                        border: Border.all(
-                                            color: Colors.black, width: 3),
                                       ),
                                     ),
                                   ],
@@ -109,7 +134,7 @@ class _ActivityElevenState extends State<ActivityEleven> {
                                             style: TextStyle(
                                               fontWeight: FontWeight.bold,
                                               fontSize: 20,
-                                              color: Colors.black,
+                                              color: Colors.white,
                                             )),
                                         TextSpan(
                                             text: snapshot
@@ -121,7 +146,7 @@ class _ActivityElevenState extends State<ActivityEleven> {
                                             style: TextStyle(
                                               // fontWeight: FontWeight.bold,
                                               fontSize: 18.0,
-                                              color: Colors.black,
+                                              color: Colors.white,
                                             )),
                                         TextSpan(
                                             text: snapshot.data['roomID'] +
@@ -129,7 +154,7 @@ class _ActivityElevenState extends State<ActivityEleven> {
                                             style: TextStyle(
                                               // fontWeight: FontWeight.bold,
                                               fontSize: 18.0,
-                                              color: Colors.black,
+                                              color: Colors.white,
                                             )),
                                         TextSpan(
                                             text: 'Activity Details'+
@@ -137,7 +162,7 @@ class _ActivityElevenState extends State<ActivityEleven> {
                                             style: TextStyle(
                                               fontWeight: FontWeight.bold,
                                               fontSize: 20.0,
-                                              color: Colors.black,
+                                              color: Colors.white,
                                             )),
                                         TextSpan(
                                             text: snapshot.data['description'] +
@@ -145,7 +170,7 @@ class _ActivityElevenState extends State<ActivityEleven> {
                                             style: TextStyle(
                                               // fontWeight: FontWeight.bold,
                                               fontSize: 20.0,
-                                              color: Colors.black,
+                                              color: Colors.white,
                                             )),
                                       ],
                                     ),

@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-
+import 'package:lxnavigator/src/app/views/indoormap/booth/boothFour.dart';
 
 //Self Directed Learning Booth
 class ActivityFour extends StatefulWidget {
@@ -9,8 +9,8 @@ class ActivityFour extends StatefulWidget {
 }
 
 class _ActivityFourState extends State<ActivityFour> {
-    @override
-    Widget build(BuildContext context) {
+  @override
+  Widget build(BuildContext context) {
     return StreamBuilder<DocumentSnapshot>(
         stream: Firestore.instance
             .collection('rooms')
@@ -27,7 +27,8 @@ class _ActivityFourState extends State<ActivityFour> {
               return new Text('Loading...');
             default:
               return Scaffold(
-                appBar: AppBar(title: Text('Activity')),
+                backgroundColor: Colors.grey,
+//                appBar: AppBar(title: Text('Activity')),
                 body: Column(
                   children: <Widget>[
                     Expanded(
@@ -39,26 +40,47 @@ class _ActivityFourState extends State<ActivityFour> {
                                 vertical: 20.0, horizontal: 50.0),
                           ),
                           Container(
-                            child: Row(
+                            child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
+                                SizedBox(
+                                  height: 30.0,
+                                  width: 5.0,
+                                ),
+                                Row(children: [
+                                  IconButton(
+                                      icon: Icon(Icons.arrow_back_ios),
+                                      color: Colors.white,
+                                      iconSize: 30,
+                                      onPressed: () async {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    BoothFour()));
+                                      }),
+                                ]),
                                 Expanded(
                                   child: new Center(
                                     child: Container(
                                       height: 450,
                                       width: 330,
                                       decoration: BoxDecoration(
-                                        color: Colors.yellow,
-                                        border: Border.all(
-                                            color: Colors.black, width: 3),
+                                        gradient: LinearGradient(
+                                          colors: [
+                                            Colors.red[600],
+                                            Colors.deepOrangeAccent
+                                          ],
+                                          begin: Alignment.topCenter,
+                                          end: Alignment.bottomCenter,
+                                        ),
                                         borderRadius: BorderRadius.all(
-                                            Radius.circular(18)
-                                            ),
-                                            
+                                            Radius.circular(18)),
                                       ),
                                     ),
                                   ),
                                 ),
+                                SizedBox(height: 50.0),
                               ],
                             ),
                           ),
@@ -68,18 +90,20 @@ class _ActivityFourState extends State<ActivityFour> {
                             children: <Widget>[
                               Container(
                                 padding: EdgeInsets.symmetric(
-                                    vertical: 70.0, horizontal: 1.0),
-                                alignment: Alignment(0.9, -0.5),
+                                    vertical: 90.0, horizontal: 1.0),
+                                alignment: Alignment(0.9, -10),
                                 child: Column(
                                   children: <Widget>[
                                     Container(
+                                      child: Image.asset(
+                                          'assets/images/logo/detail.png',
+                                          height: 70.0,
+                                          width: 70.0),
                                       height: 110,
                                       width: 110,
                                       decoration: BoxDecoration(
-                                        color: Colors.orange,
+                                        color: Colors.deepOrangeAccent[100],
                                         shape: BoxShape.circle,
-                                        border: Border.all(
-                                            color: Colors.black, width: 3),
                                       ),
                                     ),
                                   ],
@@ -110,7 +134,7 @@ class _ActivityFourState extends State<ActivityFour> {
                                             style: TextStyle(
                                               fontWeight: FontWeight.bold,
                                               fontSize: 18,
-                                              color: Colors.black,
+                                              color: Colors.white,
                                             )),
                                         TextSpan(
                                             text: snapshot
@@ -122,7 +146,7 @@ class _ActivityFourState extends State<ActivityFour> {
                                             style: TextStyle(
                                               // fontWeight: FontWeight.bold,
                                               fontSize: 18.0,
-                                              color: Colors.black,
+                                              color: Colors.white,
                                             )),
                                         TextSpan(
                                             text: snapshot.data['roomID'] +
@@ -130,15 +154,14 @@ class _ActivityFourState extends State<ActivityFour> {
                                             style: TextStyle(
                                               // fontWeight: FontWeight.bold,
                                               fontSize: 18.0,
-                                              color: Colors.black,
+                                              color: Colors.white,
                                             )),
                                         TextSpan(
-                                            text: 'Activity Details'+
-                                                '\n\n',
+                                            text: 'Activity Details' + '\n\n',
                                             style: TextStyle(
                                               fontWeight: FontWeight.bold,
                                               fontSize: 20.0,
-                                              color: Colors.black,
+                                              color: Colors.white,
                                             )),
                                         TextSpan(
                                             text: snapshot.data['description'] +
@@ -146,7 +169,7 @@ class _ActivityFourState extends State<ActivityFour> {
                                             style: TextStyle(
                                               // fontWeight: FontWeight.bold,
                                               fontSize: 20.0,
-                                              color: Colors.black,
+                                              color: Colors.white,
                                             )),
                                       ],
                                     ),
