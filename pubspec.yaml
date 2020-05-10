@@ -60,8 +60,14 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/avatar/profile.png
+    - assets/images/logo/detail.png
+    - assets/images/logo/Logo1.png
+    - assets/images/avatar/profile2.png
     - assets/images/indoormap/button.png
+    - assets/images/indoormap/lxfirstfloor.jpg
+    - assets/images/background/BG_Home.png
+    - assets/images/background/BG_Login.png
+    - assets/images/background/BG_Register.png
 
     - assets/images/indoormap/booth/Activity.png
     - assets/images/indoormap/booth/Design.png
@@ -74,7 +80,7 @@ flutter:
     - assets/images/indoormap/booth/Study.png
     - assets/images/indoormap/booth/VR.png
     - assets/images/indoormap/booth/Workshop.png
-    - assets/images/indoormap/booth/Group 2088.png
+    # - assets/images/indoormap/booth/Group 2088.png
   #   - images/a_dot_ham.jpeg
 
 
