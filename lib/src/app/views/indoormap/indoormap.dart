@@ -48,7 +48,9 @@ class _IndoorMapState extends State<IndoorMap> {
       ),
       body: Column(
         children: <Widget>[
+
           Expanded(
+            child: SingleChildScrollView(
             child: Column(
               children: <Widget>[
                 Container(
@@ -203,6 +205,17 @@ class _IndoorMapState extends State<IndoorMap> {
                     ],
                   ),
                 ),
+                new Padding(
+                  padding: new EdgeInsets.all(5.0),
+                  child: new Text(
+                    '_______________________________________________________________________________',
+                    style: TextStyle(
+                      color: Colors.black54,
+                      fontSize: 10.0,
+//                        fontWeight: FontWeight.bold
+                    ),
+                  ),
+                ),
 
                 //column 3
                 Container(
@@ -258,6 +271,17 @@ class _IndoorMapState extends State<IndoorMap> {
                     ],
                   ),
                 ),
+                new Padding(
+                  padding: new EdgeInsets.all(5.0),
+                  child: new Text(
+                    '_______________________________________________________________________________',
+                    style: TextStyle(
+                      color: Colors.black54,
+                      fontSize: 10.0,
+//                        fontWeight: FontWeight.bold
+                    ),
+                  ),
+                ),
 
                 //column 4
                 Container(
@@ -311,6 +335,17 @@ class _IndoorMapState extends State<IndoorMap> {
                         ),
                       ),
                     ],
+                  ),
+                ),
+                new Padding(
+                  padding: new EdgeInsets.all(5.0),
+                  child: new Text(
+                    '_______________________________________________________________________________',
+                    style: TextStyle(
+                      color: Colors.black54,
+                      fontSize: 10.0,
+//                        fontWeight: FontWeight.bold
+                    ),
                   ),
                 ),
                 //column 5
@@ -379,7 +414,9 @@ class _IndoorMapState extends State<IndoorMap> {
               ],
             ),
           ),
+        ),
         ],
+
       ),
     );
   }
