@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothSix.dart';
+import 'package:responsive_container/responsive_container.dart';
 
 //Escape Room Booth
 class ActivitySix extends StatefulWidget {
@@ -72,8 +73,6 @@ class _ActivitySixState extends State<ActivitySix> {
                                 Expanded(
                                   child: new Center(
                                     child: Container(
-                                      height: 450,
-                                      width: 330,
                                       decoration: BoxDecoration(
                                         gradient: LinearGradient(
                                           colors: [
@@ -85,6 +84,10 @@ class _ActivitySixState extends State<ActivitySix> {
                                         ),
                                         borderRadius: BorderRadius.all(
                                             Radius.circular(18)),
+                                      ),
+                                      child: ResponsiveContainer(
+                                        heightPercent: 70.0,
+                                        widthPercent: 80.0,
                                       ),
                                     ),
                                   ),

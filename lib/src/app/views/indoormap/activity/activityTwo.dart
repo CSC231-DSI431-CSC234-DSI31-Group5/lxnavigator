@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothTwo.dart';
+import 'package:responsive_container/responsive_container.dart';
 
 //Workshop booth
 class ActivityTwo extends StatefulWidget {
@@ -72,8 +73,6 @@ class _ActivityTwoState extends State<ActivityTwo> {
                                 Expanded(
                                   child: new Center(
                                     child: Container(
-                                      height: 450,
-                                      width: 330,
                                       decoration: BoxDecoration(
                                         gradient: LinearGradient(
                                           colors: [
@@ -85,6 +84,10 @@ class _ActivityTwoState extends State<ActivityTwo> {
                                         ),
                                         borderRadius: BorderRadius.all(
                                             Radius.circular(18)),
+                                      ),
+                                      child: ResponsiveContainer(
+                                        heightPercent: 70.0,
+                                        widthPercent: 80.0,
                                       ),
                                     ),
                                   ),

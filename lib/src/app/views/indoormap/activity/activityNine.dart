@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothNine.dart';
+import 'package:responsive_container/responsive_container.dart';
 
 //LX Building Study Booth
 class ActivityNine extends StatefulWidget {
@@ -9,8 +10,8 @@ class ActivityNine extends StatefulWidget {
 }
 
 class _ActivityNineState extends State<ActivityNine> {
-    @override
-   Widget build(BuildContext context) {
+  @override
+  Widget build(BuildContext context) {
     return StreamBuilder<DocumentSnapshot>(
         stream: Firestore.instance
             .collection('rooms')
@@ -29,7 +30,8 @@ class _ActivityNineState extends State<ActivityNine> {
                 body: Center(
                   child: Text(
                     "Loading ...",
-                    textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontSize: 40),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.white, fontSize: 40),
                   ),
                 ),
               );
@@ -71,8 +73,6 @@ class _ActivityNineState extends State<ActivityNine> {
                                 Expanded(
                                   child: new Center(
                                     child: Container(
-                                      height: 450,
-                                      width: 330,
                                       decoration: BoxDecoration(
                                         gradient: LinearGradient(
                                           colors: [
@@ -84,6 +84,10 @@ class _ActivityNineState extends State<ActivityNine> {
                                         ),
                                         borderRadius: BorderRadius.all(
                                             Radius.circular(18)),
+                                      ),
+                                      child: ResponsiveContainer(
+                                        heightPercent: 70.0,
+                                        widthPercent: 80.0,
                                       ),
                                     ),
                                   ),
@@ -165,8 +169,7 @@ class _ActivityNineState extends State<ActivityNine> {
                                               color: Colors.white,
                                             )),
                                         TextSpan(
-                                            text: 'Activity Details'+
-                                                '\n\n',
+                                            text: 'Activity Details' + '\n\n',
                                             style: TextStyle(
                                               fontWeight: FontWeight.bold,
                                               fontSize: 20.0,

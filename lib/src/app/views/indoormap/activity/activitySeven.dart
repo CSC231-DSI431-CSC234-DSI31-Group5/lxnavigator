@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothSeven.dart';
+import 'package:responsive_container/responsive_container.dart';
 
 //Peel And Watch Booth
 class ActivitySeven extends StatefulWidget {
@@ -72,8 +73,6 @@ class _ActivitySevenState extends State<ActivitySeven> {
                                 Expanded(
                                   child: new Center(
                                     child: Container(
-                                      height: 450,
-                                      width: 330,
                                       decoration: BoxDecoration(
                                         gradient: LinearGradient(
                                           colors: [
@@ -85,6 +84,9 @@ class _ActivitySevenState extends State<ActivitySeven> {
                                         ),
                                         borderRadius: BorderRadius.all(
                                             Radius.circular(18)),
+                                      ),
+                                      child:  ResponsiveContainer(
+                                        heightPercent: 70.0, widthPercent: 80.0,
                                       ),
                                     ),
                                   ),

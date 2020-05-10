@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothOne.dart';
+import 'package:responsive_container/responsive_container.dart';
 
 //VR AR MR booth
 class ActivityOne extends StatefulWidget {
@@ -8,7 +9,8 @@ class ActivityOne extends StatefulWidget {
   _ActivityOneState createState() => _ActivityOneState();
 }
 
-class _ActivityOneState extends State<ActivityOne> {
+
+class _ActivityOneState extends State<ActivityOne> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<DocumentSnapshot>(
@@ -72,8 +74,6 @@ class _ActivityOneState extends State<ActivityOne> {
                                 Expanded(
                                   child: new Center(
                                     child: Container(
-                                      height: 450,
-                                      width: 330,
                                       decoration: BoxDecoration(
                                         gradient: LinearGradient(
                                           colors: [
@@ -85,6 +85,9 @@ class _ActivityOneState extends State<ActivityOne> {
                                         ),
                                         borderRadius: BorderRadius.all(
                                             Radius.circular(18)),
+                                      ),
+                                      child:  ResponsiveContainer(
+                                        heightPercent: 70.0, widthPercent: 80.0,
                                       ),
                                     ),
                                   ),
