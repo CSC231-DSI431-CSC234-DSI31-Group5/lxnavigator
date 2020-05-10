@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:lxnavigator/src/app/views/indoormap/activity/activityEleven.dart';
-import 'package:lxnavigator/src/app/views/indoormap/activity/activityTen.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothEight.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothFive.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothFour.dart';
