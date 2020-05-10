@@ -33,7 +33,6 @@ class _BoothFiveState extends State<BoothFive> {
             size: 30,
           ),
           onPressed: () {
-            // widget.toggleView();
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => Home()),
@@ -212,7 +211,6 @@ class _BoothFiveState extends State<BoothFive> {
                       style: TextStyle(
                         color: Colors.black54,
                         fontSize: 10.0,
-//                        fontWeight: FontWeight.bold
                       ),
                     ),
                   ),
@@ -278,7 +276,6 @@ class _BoothFiveState extends State<BoothFive> {
                       style: TextStyle(
                         color: Colors.black54,
                         fontSize: 10.0,
-//                        fontWeight: FontWeight.bold
                       ),
                     ),
                   ),
@@ -345,7 +342,6 @@ class _BoothFiveState extends State<BoothFive> {
                       style: TextStyle(
                         color: Colors.black54,
                         fontSize: 10.0,
-//                        fontWeight: FontWeight.bold
                       ),
                     ),
                   ),
@@ -422,7 +418,6 @@ class _BoothFiveState extends State<BoothFive> {
                       ],
                     ),
                   ),
-                  //column 6
                 ],
               ),
             ),
@@ -432,5 +427,3 @@ class _BoothFiveState extends State<BoothFive> {
     );
   }
 }
-
-// imageProvider: const AssetImage("assets/images/indoormap/lxfirstfloor.jpg",),

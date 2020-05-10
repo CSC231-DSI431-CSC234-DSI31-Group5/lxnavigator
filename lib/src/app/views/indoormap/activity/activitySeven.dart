@@ -38,7 +38,6 @@ class _ActivitySevenState extends State<ActivitySeven> {
             default:
               return Scaffold(
                 backgroundColor: Colors.grey,
-//                appBar: AppBar(title: Text('Activity')),
                 body: Column(
                   children: <Widget>[
                     Expanded(
@@ -85,8 +84,9 @@ class _ActivitySevenState extends State<ActivitySeven> {
                                         borderRadius: BorderRadius.all(
                                             Radius.circular(18)),
                                       ),
-                                      child:  ResponsiveContainer(
-                                        heightPercent: 70.0, widthPercent: 80.0,
+                                      child: ResponsiveContainer(
+                                        heightPercent: 70.0,
+                                        widthPercent: 80.0,
                                       ),
                                     ),
                                   ),
@@ -132,12 +132,6 @@ class _ActivitySevenState extends State<ActivitySeven> {
                                       vertical: 150.0, horizontal: 65.0),
                                   child: RichText(
                                     text: new TextSpan(
-                                      // Note: Styles for TextSpans must be explicitly defined.
-                                      // Child text spans will inherit styles from parent
-                                      // style: new TextStyle(
-                                      //   fontSize: 14.0,
-                                      //   color: Colors.black,
-                                      // ),
                                       children: <TextSpan>[
                                         TextSpan(
                                             text: snapshot.data['boothName'] +
@@ -155,7 +149,6 @@ class _ActivitySevenState extends State<ActivitySeven> {
                                                     .data['activityTimeEnd'] +
                                                 '\n\n',
                                             style: TextStyle(
-                                              // fontWeight: FontWeight.bold,
                                               fontSize: 18.0,
                                               color: Colors.white,
                                             )),
@@ -163,7 +156,6 @@ class _ActivitySevenState extends State<ActivitySeven> {
                                             text: snapshot.data['roomID'] +
                                                 '\n\n',
                                             style: TextStyle(
-                                              // fontWeight: FontWeight.bold,
                                               fontSize: 18.0,
                                               color: Colors.white,
                                             )),
@@ -178,16 +170,12 @@ class _ActivitySevenState extends State<ActivitySeven> {
                                             text: snapshot.data['description'] +
                                                 '\n\n',
                                             style: TextStyle(
-                                              // fontWeight: FontWeight.bold,
                                               fontSize: 20.0,
                                               color: Colors.white,
                                             )),
                                       ],
                                     ),
                                   ),
-
-                                  // height: 450,
-                                  // width: 300,
                                 ),
                               ),
                             ],
@@ -202,4 +190,3 @@ class _ActivitySevenState extends State<ActivitySeven> {
         });
   }
 }
-// imageProvider: const AssetImage("assets/images/indoormap/lxfirstfloor.jpg",),

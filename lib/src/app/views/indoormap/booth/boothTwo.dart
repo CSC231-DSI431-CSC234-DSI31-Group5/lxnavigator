@@ -32,7 +32,6 @@ class _BoothTwoState extends State<BoothTwo> {
             size: 30,
           ),
           onPressed: () {
-            // widget.toggleView();
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => Home()),
@@ -68,7 +67,7 @@ class _BoothTwoState extends State<BoothTwo> {
                   //column 0
                   Container(
                     padding:
-                    EdgeInsets.only(bottom: 20.0, left: 50.0, right: 50.0),
+                        EdgeInsets.only(bottom: 20.0, left: 50.0, right: 50.0),
                   ),
 
                   //column 1
@@ -177,7 +176,6 @@ class _BoothTwoState extends State<BoothTwo> {
                                 }),
                           ),
                         ),
-                        //
                         SizedBox(width: 7.0),
                         ButtonTheme(
                           minWidth: 100,
@@ -211,7 +209,6 @@ class _BoothTwoState extends State<BoothTwo> {
                       style: TextStyle(
                         color: Colors.black54,
                         fontSize: 10.0,
-//                        fontWeight: FontWeight.bold
                       ),
                     ),
                   ),
@@ -277,7 +274,6 @@ class _BoothTwoState extends State<BoothTwo> {
                       style: TextStyle(
                         color: Colors.black54,
                         fontSize: 10.0,
-//                        fontWeight: FontWeight.bold
                       ),
                     ),
                   ),
@@ -344,7 +340,6 @@ class _BoothTwoState extends State<BoothTwo> {
                       style: TextStyle(
                         color: Colors.black54,
                         fontSize: 10.0,
-//                        fontWeight: FontWeight.bold
                       ),
                     ),
                   ),
@@ -421,7 +416,6 @@ class _BoothTwoState extends State<BoothTwo> {
                       ],
                     ),
                   ),
-                  //column 6
                 ],
               ),
             ),
@@ -431,4 +425,3 @@ class _BoothTwoState extends State<BoothTwo> {
     );
   }
 }
-// imageProvider: const AssetImage("assets/images/indoormap/lxfirstfloor.jpg",),

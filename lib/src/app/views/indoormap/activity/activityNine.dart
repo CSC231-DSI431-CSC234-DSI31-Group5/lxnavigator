@@ -38,7 +38,6 @@ class _ActivityNineState extends State<ActivityNine> {
             default:
               return Scaffold(
                 backgroundColor: Colors.grey,
-//                appBar: AppBar(title: Text('Activity')),
                 body: Column(
                   children: <Widget>[
                     Expanded(
@@ -133,12 +132,6 @@ class _ActivityNineState extends State<ActivityNine> {
                                       vertical: 150.0, horizontal: 65.0),
                                   child: RichText(
                                     text: new TextSpan(
-                                      // Note: Styles for TextSpans must be explicitly defined.
-                                      // Child text spans will inherit styles from parent
-                                      // style: new TextStyle(
-                                      //   fontSize: 14.0,
-                                      //   color: Colors.black,
-                                      // ),
                                       children: <TextSpan>[
                                         TextSpan(
                                             text: snapshot.data['boothName'] +
@@ -156,7 +149,6 @@ class _ActivityNineState extends State<ActivityNine> {
                                                     .data['activityTimeEnd'] +
                                                 '\n\n',
                                             style: TextStyle(
-                                              // fontWeight: FontWeight.bold,
                                               fontSize: 18.0,
                                               color: Colors.white,
                                             )),
@@ -164,7 +156,6 @@ class _ActivityNineState extends State<ActivityNine> {
                                             text: snapshot.data['roomID'] +
                                                 '\n\n',
                                             style: TextStyle(
-                                              // fontWeight: FontWeight.bold,
                                               fontSize: 18.0,
                                               color: Colors.white,
                                             )),
@@ -179,16 +170,12 @@ class _ActivityNineState extends State<ActivityNine> {
                                             text: snapshot.data['description'] +
                                                 '\n\n',
                                             style: TextStyle(
-                                              // fontWeight: FontWeight.bold,
                                               fontSize: 20.0,
                                               color: Colors.white,
                                             )),
                                       ],
                                     ),
                                   ),
-
-                                  // height: 450,
-                                  // width: 300,
                                 ),
                               ),
                             ],
@@ -203,4 +190,3 @@ class _ActivityNineState extends State<ActivityNine> {
         });
   }
 }
-// imageProvider: const AssetImage("assets/images/indoormap/lxfirstfloor.jpg",),

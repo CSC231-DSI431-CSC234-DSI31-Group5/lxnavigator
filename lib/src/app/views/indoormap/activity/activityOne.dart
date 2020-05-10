@@ -9,8 +9,8 @@ class ActivityOne extends StatefulWidget {
   _ActivityOneState createState() => _ActivityOneState();
 }
 
-
-class _ActivityOneState extends State<ActivityOne> with SingleTickerProviderStateMixin {
+class _ActivityOneState extends State<ActivityOne>
+    with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<DocumentSnapshot>(
@@ -39,7 +39,6 @@ class _ActivityOneState extends State<ActivityOne> with SingleTickerProviderStat
             default:
               return Scaffold(
                 backgroundColor: Colors.grey,
-//                appBar: AppBar(title: Text('Activity')),
                 body: Column(
                   children: <Widget>[
                     Expanded(
@@ -86,8 +85,9 @@ class _ActivityOneState extends State<ActivityOne> with SingleTickerProviderStat
                                         borderRadius: BorderRadius.all(
                                             Radius.circular(18)),
                                       ),
-                                      child:  ResponsiveContainer(
-                                        heightPercent: 70.0, widthPercent: 80.0,
+                                      child: ResponsiveContainer(
+                                        heightPercent: 70.0,
+                                        widthPercent: 80.0,
                                       ),
                                     ),
                                   ),
@@ -134,12 +134,6 @@ class _ActivityOneState extends State<ActivityOne> with SingleTickerProviderStat
                                       vertical: 150.0, horizontal: 65.0),
                                   child: RichText(
                                     text: new TextSpan(
-                                      // Note: Styles for TextSpans must be explicitly defined.
-                                      // Child text spans will inherit styles from parent
-                                      // style: new TextStyle(
-                                      //   fontSize: 14.0,
-                                      //   color: Colors.black,
-                                      // ),
                                       children: <TextSpan>[
                                         TextSpan(
                                             text: snapshot.data['boothName'] +
@@ -157,7 +151,6 @@ class _ActivityOneState extends State<ActivityOne> with SingleTickerProviderStat
                                                     .data['activityTimeEnd'] +
                                                 '\n\n',
                                             style: TextStyle(
-                                              // fontWeight: FontWeight.bold,
                                               fontSize: 18.0,
                                               color: Colors.white,
                                             )),
@@ -165,7 +158,6 @@ class _ActivityOneState extends State<ActivityOne> with SingleTickerProviderStat
                                             text: snapshot.data['roomID'] +
                                                 '\n\n',
                                             style: TextStyle(
-                                              // fontWeight: FontWeight.bold,
                                               fontSize: 18.0,
                                               color: Colors.white,
                                             )),
@@ -180,16 +172,12 @@ class _ActivityOneState extends State<ActivityOne> with SingleTickerProviderStat
                                             text: snapshot.data['description'] +
                                                 '\n\n',
                                             style: TextStyle(
-                                              // fontWeight: FontWeight.bold,
                                               fontSize: 20.0,
                                               color: Colors.white,
                                             )),
                                       ],
                                     ),
                                   ),
-
-                                  // height: 450,
-                                  // width: 300,
                                 ),
                               ),
                             ],
@@ -204,4 +192,3 @@ class _ActivityOneState extends State<ActivityOne> with SingleTickerProviderStat
         });
   }
 }
-// imageProvider: const AssetImage("assets/images/indoormap/lxfirstfloor.jpg",),

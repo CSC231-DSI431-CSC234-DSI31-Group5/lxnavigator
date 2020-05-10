@@ -33,7 +33,6 @@ class _RegisterState extends State<Register> {
   String email = '';
   String password = '';
   String error = '';
-  String username = '';
   String firstname = '';
   String lastname = '';
   String occupation = '';
@@ -43,18 +42,6 @@ class _RegisterState extends State<Register> {
     return loading
         ? Loading()
         : Scaffold(
-//            appBar: AppBar(
-//                backgroundColor: Colors.brown[400],
-//                elevation: 0.0,
-//                title: Text('Sign up in to LX Navigator'),
-//                actions: <Widget>[
-//                  FlatButton.icon(
-//                      icon: Icon(Icons.person),
-//                      label: Text('Sign In'),
-//                      onPressed: () {
-//                        widget.toggleView();
-//                      })
-//                ]),
             body: Container(
               decoration: BoxDecoration(
                 image: DecorationImage(

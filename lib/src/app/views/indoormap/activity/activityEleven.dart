@@ -133,12 +133,6 @@ class _ActivityElevenState extends State<ActivityEleven> {
                                       vertical: 150.0, horizontal: 65.0),
                                   child: RichText(
                                     text: new TextSpan(
-                                      // Note: Styles for TextSpans must be explicitly defined.
-                                      // Child text spans will inherit styles from parent
-                                      // style: new TextStyle(
-                                      //   fontSize: 14.0,
-                                      //   color: Colors.black,
-                                      // ),
                                       children: <TextSpan>[
                                         TextSpan(
                                             text: snapshot.data['boothName'] +
@@ -156,7 +150,6 @@ class _ActivityElevenState extends State<ActivityEleven> {
                                                     .data['activityTimeEnd'] +
                                                 '\n\n',
                                             style: TextStyle(
-                                              // fontWeight: FontWeight.bold,
                                               fontSize: 18.0,
                                               color: Colors.white,
                                             )),
@@ -164,7 +157,6 @@ class _ActivityElevenState extends State<ActivityEleven> {
                                             text: snapshot.data['roomID'] +
                                                 '\n\n',
                                             style: TextStyle(
-                                              // fontWeight: FontWeight.bold,
                                               fontSize: 18.0,
                                               color: Colors.white,
                                             )),
@@ -179,16 +171,12 @@ class _ActivityElevenState extends State<ActivityEleven> {
                                             text: snapshot.data['description'] +
                                                 '\n\n',
                                             style: TextStyle(
-                                              // fontWeight: FontWeight.bold,
                                               fontSize: 20.0,
                                               color: Colors.white,
                                             )),
                                       ],
                                     ),
                                   ),
-
-                                  // height: 450,
-                                  // width: 300,
                                 ),
                               ),
                             ],
@@ -203,4 +191,3 @@ class _ActivityElevenState extends State<ActivityEleven> {
         });
   }
 }
-// imageProvider: const AssetImage("assets/images/indoormap/lxfirstfloor.jpg",),

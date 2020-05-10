@@ -1,19 +1,11 @@
-// import 'package:flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:lxnavigator/src/aunthenticate/register.dart';
 import 'package:lxnavigator/src/aunthenticate/reset.dart';
 import 'package:lxnavigator/src/home/views/home.dart';
 import 'package:lxnavigator/src/presenters/auth.dart';
-
-// import 'package:lxnavigator/src/shared/constant.dart';
 import 'package:lxnavigator/src/shared/loading.dart';
-// import 'register.dart';
 
 class SignIn extends StatefulWidget {
-  final Function toggleView;
-
-  SignIn({this.toggleView});
-
   @override
   _SignInState createState() => _SignInState();
 }
@@ -42,18 +34,6 @@ class _SignInState extends State<SignIn> {
     return loading
         ? Loading()
         : Scaffold(
-//            appBar: AppBar(
-//                backgroundColor: Colors.brown[400],
-//                elevation: 0.0,
-//                title: Text('Sign in to LX Navigator'),
-//                actions: <Widget>[
-//                  FlatButton.icon(
-//                      icon: Icon(Icons.person),
-//                      label: Text('Register'),
-//                      onPressed: () {
-//                        widget.toggleView();
-//                      })
-//                ]),
             body: Container(
               decoration: BoxDecoration(
                 image: DecorationImage(

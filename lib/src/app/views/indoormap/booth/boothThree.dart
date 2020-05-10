@@ -32,7 +32,6 @@ class _BoothThreeState extends State<BoothThree> {
             size: 30,
           ),
           onPressed: () {
-            // widget.toggleView();
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => Home()),
@@ -177,7 +176,6 @@ class _BoothThreeState extends State<BoothThree> {
                                 }),
                           ),
                         ),
-                        //
                         SizedBox(width: 7.0),
                         ButtonTheme(
                           minWidth: 100,
@@ -211,7 +209,6 @@ class _BoothThreeState extends State<BoothThree> {
                       style: TextStyle(
                         color: Colors.black54,
                         fontSize: 10.0,
-//                        fontWeight: FontWeight.bold
                       ),
                     ),
                   ),
@@ -277,7 +274,6 @@ class _BoothThreeState extends State<BoothThree> {
                       style: TextStyle(
                         color: Colors.black54,
                         fontSize: 10.0,
-//                        fontWeight: FontWeight.bold
                       ),
                     ),
                   ),
@@ -344,7 +340,6 @@ class _BoothThreeState extends State<BoothThree> {
                       style: TextStyle(
                         color: Colors.black54,
                         fontSize: 10.0,
-//                        fontWeight: FontWeight.bold
                       ),
                     ),
                   ),
@@ -421,7 +416,6 @@ class _BoothThreeState extends State<BoothThree> {
                       ],
                     ),
                   ),
-                  //column 6
                 ],
               ),
             ),
@@ -431,4 +425,3 @@ class _BoothThreeState extends State<BoothThree> {
     );
   }
 }
-// imageProvider: const AssetImage("assets/images/indoormap/lxfirstfloor.jpg",),

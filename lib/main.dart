@@ -5,12 +5,6 @@ import 'package:lxnavigator/src/wrapper.dart';
 import 'package:provider/provider.dart';
 import 'package:splashscreen/splashscreen.dart';
 
-// void main(){
-//   runApp(new MaterialApp(
-//     home: new MyApp(),
-//   ));
-// }
-
 void main() {
   runApp(new MaterialApp(
     home: MyApp(),

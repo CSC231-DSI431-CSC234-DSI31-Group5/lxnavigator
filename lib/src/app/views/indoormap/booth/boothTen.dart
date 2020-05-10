@@ -13,7 +13,7 @@ import 'package:lxnavigator/src/app/views/indoormap/booth/boothTwo.dart';
 import 'package:lxnavigator/src/home/views/home.dart';
 import 'package:photo_view/photo_view.dart';
 
-////Entrepreneur Innovation Show Cart Booth
+//Entrepreneur Innovation Show Cart Booth
 class BoothTen extends StatefulWidget {
   @override
   _BoothTenState createState() => _BoothTenState();
@@ -32,7 +32,6 @@ class _BoothTenState extends State<BoothTen> {
             size: 30,
           ),
           onPressed: () {
-            // widget.toggleView();
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => Home()),
@@ -177,7 +176,6 @@ class _BoothTenState extends State<BoothTen> {
                                 }),
                           ),
                         ),
-                        //
                         SizedBox(width: 7.0),
                         ButtonTheme(
                           minWidth: 100,
@@ -211,7 +209,6 @@ class _BoothTenState extends State<BoothTen> {
                       style: TextStyle(
                         color: Colors.black54,
                         fontSize: 10.0,
-//                        fontWeight: FontWeight.bold
                       ),
                     ),
                   ),
@@ -277,7 +274,6 @@ class _BoothTenState extends State<BoothTen> {
                       style: TextStyle(
                         color: Colors.black54,
                         fontSize: 10.0,
-//                        fontWeight: FontWeight.bold
                       ),
                     ),
                   ),
@@ -344,7 +340,6 @@ class _BoothTenState extends State<BoothTen> {
                       style: TextStyle(
                         color: Colors.black54,
                         fontSize: 10.0,
-//                        fontWeight: FontWeight.bold
                       ),
                     ),
                   ),
@@ -421,7 +416,6 @@ class _BoothTenState extends State<BoothTen> {
                       ],
                     ),
                   ),
-                  //column 6
                 ],
               ),
             ),
@@ -431,4 +425,3 @@ class _BoothTenState extends State<BoothTen> {
     );
   }
 }
-// imageProvider: const AssetImage("assets/images/indoormap/lxfirstfloor.jpg",),

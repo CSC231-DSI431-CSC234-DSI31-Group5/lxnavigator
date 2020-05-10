@@ -6,10 +6,6 @@ import 'package:lxnavigator/src/presenters/auth.dart';
 import 'package:lxnavigator/src/shared/loading.dart';
 
 class Reset extends StatefulWidget {
-  final Function toggleView;
-
-  Reset({this.toggleView});
-
   @override
   _ResetState createState() => _ResetState();
 }
@@ -39,18 +35,6 @@ class _ResetState extends State<Reset> {
         ? Loading()
         : Scaffold(
             resizeToAvoidBottomPadding: false,
-//            appBar: AppBar(
-//                backgroundColor: Colors.brown[400],
-//                elevation: 0.0,
-//                title: Text('Sign in to LX Navigator'),
-//                actions: <Widget>[
-//                  FlatButton.icon(
-//                      icon: Icon(Icons.person),
-//                      label: Text('Register'),
-//                      onPressed: () {
-//                        widget.toggleView();
-//                      })
-//                ]),
             body: Container(
               child: Container(
                 decoration: BoxDecoration(
@@ -70,8 +54,10 @@ class _ResetState extends State<Reset> {
                             iconSize: 30,
                             alignment: Alignment(-15, 20),
                             onPressed: () {
-                              Navigator.push(context,
-                                MaterialPageRoute(builder: (context) => SignIn()),
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SignIn()),
                               );
                             }),
                       ]),

@@ -32,7 +32,6 @@ class _BoothEightState extends State<BoothEight> {
             size: 30,
           ),
           onPressed: () {
-            // widget.toggleView();
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => Home()),
@@ -177,7 +176,6 @@ class _BoothEightState extends State<BoothEight> {
                                 }),
                           ),
                         ),
-                        //
                         SizedBox(width: 7.0),
                         ButtonTheme(
                           minWidth: 100,
@@ -211,7 +209,6 @@ class _BoothEightState extends State<BoothEight> {
                       style: TextStyle(
                         color: Colors.black54,
                         fontSize: 10.0,
-//                        fontWeight: FontWeight.bold
                       ),
                     ),
                   ),
@@ -277,7 +274,6 @@ class _BoothEightState extends State<BoothEight> {
                       style: TextStyle(
                         color: Colors.black54,
                         fontSize: 10.0,
-//                        fontWeight: FontWeight.bold
                       ),
                     ),
                   ),
@@ -344,10 +340,10 @@ class _BoothEightState extends State<BoothEight> {
                       style: TextStyle(
                         color: Colors.black54,
                         fontSize: 10.0,
-//                        fontWeight: FontWeight.bold
                       ),
                     ),
                   ),
+
                   //column 5
                   Container(
                     child: Row(
@@ -379,6 +375,7 @@ class _BoothEightState extends State<BoothEight> {
                       ],
                     ),
                   ),
+
                   //column 6
                   Container(
                     child: Row(
@@ -421,7 +418,6 @@ class _BoothEightState extends State<BoothEight> {
                       ],
                     ),
                   ),
-                  //column 6
                 ],
               ),
             ),
@@ -431,4 +427,3 @@ class _BoothEightState extends State<BoothEight> {
     );
   }
 }
-// imageProvider: const AssetImage("assets/images/indoormap/lxfirstfloor.jpg",),

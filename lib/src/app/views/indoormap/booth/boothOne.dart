@@ -33,7 +33,6 @@ class _BoothOneState extends State<BoothOne> {
             size: 30,
           ),
           onPressed: () {
-            // widget.toggleView();
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => Home()),
@@ -178,7 +177,6 @@ class _BoothOneState extends State<BoothOne> {
                                 }),
                           ),
                         ),
-                        //
                         SizedBox(width: 7.0),
                         ButtonTheme(
                           minWidth: 100,
@@ -212,7 +210,6 @@ class _BoothOneState extends State<BoothOne> {
                       style: TextStyle(
                         color: Colors.black54,
                         fontSize: 10.0,
-//                        fontWeight: FontWeight.bold
                       ),
                     ),
                   ),
@@ -278,7 +275,6 @@ class _BoothOneState extends State<BoothOne> {
                       style: TextStyle(
                         color: Colors.black54,
                         fontSize: 10.0,
-//                        fontWeight: FontWeight.bold
                       ),
                     ),
                   ),
@@ -383,7 +379,9 @@ class _BoothOneState extends State<BoothOne> {
                   Container(
                     child: Row(
                       children: <Widget>[
-                        SizedBox(width: 30.0,),
+                        SizedBox(
+                          width: 30.0,
+                        ),
                         ButtonTheme(
                           minWidth: 200,
                           child: new Center(
@@ -421,7 +419,6 @@ class _BoothOneState extends State<BoothOne> {
                       ],
                     ),
                   ),
-                  //column 6
                 ],
               ),
             ),
@@ -431,4 +428,3 @@ class _BoothOneState extends State<BoothOne> {
     );
   }
 }
-// imageProvider: const AssetImage("assets/images/indoormap/lxfirstfloor.jpg",),

@@ -5,7 +5,6 @@ import 'package:lxnavigator/src/app/views/mapbox/map.dart';
 import 'package:lxnavigator/src/app/views/indoormap/indoormap.dart';
 import 'package:lxnavigator/src/aunthenticate/sign_in.dart';
 
-
 class Home extends StatelessWidget {
   Widget showLogo() {
     return Container(
@@ -38,16 +37,6 @@ class Home extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-//              Row(children: [
-//                IconButton(
-//                    icon: Icon(Icons.menu),
-//                    iconSize: 40,
-//                    alignment: Alignment(-25, 20),
-//                    onPressed: () async {
-//                      Navigator.push(context,
-//                          MaterialPageRoute(builder: (context) => DrawerCode()));
-//                    }),
-//              ]),
               SizedBox(height: 15.0),
               showLogo(),
               new Padding(
@@ -181,7 +170,7 @@ class _DrawerCodeState extends State<DrawerCode> {
                       ),
                     ),
                     new Padding(
-                      padding: new EdgeInsets.only(left:5.0),
+                      padding: new EdgeInsets.only(left: 5.0),
                       child: new Text(
                         '    Name',
                         style: TextStyle(
@@ -209,7 +198,7 @@ class _DrawerCodeState extends State<DrawerCode> {
                       }).toList(),
                     )),
                     new Padding(
-                      padding: new EdgeInsets.only(left:5.0),
+                      padding: new EdgeInsets.only(left: 5.0),
                       child: new Text(
                         '    Email',
                         style: TextStyle(
@@ -234,7 +223,7 @@ class _DrawerCodeState extends State<DrawerCode> {
                       }).toList(),
                     )),
                     new Padding(
-                      padding: new EdgeInsets.only(left:5.0),
+                      padding: new EdgeInsets.only(left: 5.0),
                       child: new Text(
                         '    Occupation',
                         style: TextStyle(

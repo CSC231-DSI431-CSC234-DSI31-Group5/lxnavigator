@@ -33,7 +33,6 @@ class _BoothSevenState extends State<BoothSeven> {
             size: 30,
           ),
           onPressed: () {
-            // widget.toggleView();
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => Home()),
@@ -178,7 +177,6 @@ class _BoothSevenState extends State<BoothSeven> {
                                 }),
                           ),
                         ),
-                        //
                         SizedBox(width: 7.0),
                         ButtonTheme(
                           minWidth: 100,
@@ -212,7 +210,6 @@ class _BoothSevenState extends State<BoothSeven> {
                       style: TextStyle(
                         color: Colors.black54,
                         fontSize: 10.0,
-//                        fontWeight: FontWeight.bold
                       ),
                     ),
                   ),
@@ -278,7 +275,6 @@ class _BoothSevenState extends State<BoothSeven> {
                       style: TextStyle(
                         color: Colors.black54,
                         fontSize: 10.0,
-//                        fontWeight: FontWeight.bold
                       ),
                     ),
                   ),
@@ -345,7 +341,6 @@ class _BoothSevenState extends State<BoothSeven> {
                       style: TextStyle(
                         color: Colors.black54,
                         fontSize: 10.0,
-//                        fontWeight: FontWeight.bold
                       ),
                     ),
                   ),
@@ -422,7 +417,6 @@ class _BoothSevenState extends State<BoothSeven> {
                       ],
                     ),
                   ),
-                  //column 6
                 ],
               ),
             ),
@@ -432,4 +426,3 @@ class _BoothSevenState extends State<BoothSeven> {
     );
   }
 }
-// imageProvider: const AssetImage("assets/images/indoormap/lxfirstfloor.jpg",),
