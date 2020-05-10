@@ -4,45 +4,111 @@ import 'package:flutter/material.dart';
 import 'package:lxnavigator/src/app/views/mapbox/map.dart';
 import 'package:lxnavigator/src/app/views/indoormap/indoormap.dart';
 import 'package:lxnavigator/src/aunthenticate/sign_in.dart';
-// import 'package:lxnavigator/src/models/user.dart';
+
 
 class Home extends StatelessWidget {
+  Widget showLogo() {
+    return Container(
+      width: 225.0, // Control the logo size
+      height: 225.0,
+      child: Image.asset('assets/images/logo/Logo1.png'),
+    );
+  }
+
   // final AuthService _auth = AuthService();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.brown[50],
       appBar: AppBar(
-        title: Text('LX Navigator'),
-        backgroundColor: Colors.brown[400],
+        iconTheme: IconThemeData(
+          color: Colors.black,
+        ),
+        backgroundColor: Colors.white,
         elevation: 0.0,
       ),
       drawer: DrawerCode(),
       body: Container(
-        padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
-        child: Form(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/background/BG_Home.png"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        padding: EdgeInsets.only(top: 20.0),
+        child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              RaisedButton(
-                  color: Colors.pink[400],
-                  child: Text(
-                    'map',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onPressed: () async {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => MyMap()));
-                  }),
-              RaisedButton(
-                  color: Colors.pink[400],
-                  child: Text(
-                    'Indoor Map',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onPressed: () async {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => IndoorMap()));
-                  }),
+//              Row(children: [
+//                IconButton(
+//                    icon: Icon(Icons.menu),
+//                    iconSize: 40,
+//                    alignment: Alignment(-25, 20),
+//                    onPressed: () async {
+//                      Navigator.push(context,
+//                          MaterialPageRoute(builder: (context) => DrawerCode()));
+//                    }),
+//              ]),
+              SizedBox(height: 15.0),
+              showLogo(),
+              new Padding(
+                padding: new EdgeInsets.all(5.0),
+                child: new Text(
+                  'LX Navigator',
+                  style: TextStyle(
+                      color: Colors.black54,
+                      fontSize: 30.0,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+              SizedBox(height: 180.0),
+              new SizedBox(
+                height: 60,
+                child: new RaisedButton(
+                    color: Colors.yellow[800],
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Icon(
+                          Icons.location_on,
+                          color: Colors.white,
+                          size: 30.0,
+                        ), // icon
+
+                        Text(
+                          "Map",
+                          style: TextStyle(color: Colors.white, fontSize: 30.0),
+                        ), // text
+                      ],
+                    ),
+                    onPressed: () async {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => MyMap()));
+                    }),
+              ),
+              new SizedBox(
+                height: 60,
+                child: new RaisedButton(
+                    color: Colors.orange[800],
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Icon(
+                          Icons.map,
+                          color: Colors.white,
+                          size: 30.0,
+                        ), // icon
+
+                        Text(
+                          "Floor Plan",
+                          style: TextStyle(color: Colors.white, fontSize: 30.0),
+                        ), // text
+                      ],
+                    ),
+                    onPressed: () async {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => IndoorMap()));
+                    }),
+              ),
             ],
           ),
         ),
@@ -86,20 +152,22 @@ class _DrawerCodeState extends State<DrawerCode> {
           default:
             return Drawer(
               child: Container(
+                color: Colors.white,
                 child: ListView(
                   padding: EdgeInsets.zero,
                   children: <Widget>[
+                    SizedBox(height: 20.0),
                     DrawerHeader(
                       decoration: BoxDecoration(color: Colors.white),
-                      child: Column(
+                      child: Row(
                         children: <Widget>[
                           Flexible(
                             child: Container(
                               padding: EdgeInsets.symmetric(
-                                  vertical: 20.0, horizontal: 50.0),
-                              width: 100,
-                              height: 100,
-                              margin: EdgeInsets.only(bottom: 5),
+                                  vertical: 20.0, horizontal: 60.0),
+                              width: 70,
+                              height: 70,
+                              margin: EdgeInsets.only(top: 70),
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                                 image: DecorationImage(
@@ -112,50 +180,112 @@ class _DrawerCodeState extends State<DrawerCode> {
                         ],
                       ),
                     ),
-                    Container(
-                     child: Column(
-                       children: snapshot.data.documents.map((DocumentSnapshot document) {
-                         return new ListTile(
-                           title: Text("Name \n\n"+ document['firstname']+" "+document['lastname'] +"\n\n"),
-                         );
-                       }).toList(),
-                     )
+                    new Padding(
+                      padding: new EdgeInsets.only(left:5.0),
+                      child: new Text(
+                        '    Name',
+                        style: TextStyle(
+                            color: Colors.black54,
+                            fontSize: 14.0,
+                            fontWeight: FontWeight.bold),
+                      ),
                     ),
                     Container(
-                       child: Column(
-                       children: snapshot.data.documents.map((DocumentSnapshot document) {
-                         return new ListTile(
-                           title: Text("Email \n\n"+ document['email'] +"\n\n"),
-                         );
-                       }).toList(),
-                     )
-                    ),
-                    Container(
-                     child: Column(
-                       children: snapshot.data.documents.map((DocumentSnapshot document) {
-                         return new ListTile(
-                           title: Text("Occupation \n\n"+ document['occupation'] +"\n\n"),
-                         );
-                       }).toList(),
-                     )
-                    ),
-                    Container(
-                      child: RaisedButton(
-                          padding: EdgeInsets.symmetric(
-                              vertical: 20.0, horizontal: 50.0),
-                          color: Colors.orange[400],
-                          child: Text(
-                            'Sign Out',
-                            style: TextStyle(color: Colors.white),
+                        child: Column(
+                      children: snapshot.data.documents
+                          .map((DocumentSnapshot document) {
+                        return new ListTile(
+                          title: Text(
+                            document['firstname'] +
+                                " " +
+                                document['lastname'] +
+                                "\n\n",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 19.0,
+                                fontWeight: FontWeight.bold),
                           ),
-                          onPressed: () async {
-                            if( _auth.signOut() != null){
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => SignIn()),
-                          );
-                            }
-                          }),
+                        );
+                      }).toList(),
+                    )),
+                    new Padding(
+                      padding: new EdgeInsets.only(left:5.0),
+                      child: new Text(
+                        '    Email',
+                        style: TextStyle(
+                            color: Colors.black54,
+                            fontSize: 14.0,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    Container(
+                        child: Column(
+                      children: snapshot.data.documents
+                          .map((DocumentSnapshot document) {
+                        return new ListTile(
+                          title: Text(
+                            document['email'] + "\n\n",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 19.0,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        );
+                      }).toList(),
+                    )),
+                    new Padding(
+                      padding: new EdgeInsets.only(left:5.0),
+                      child: new Text(
+                        '    Occupation',
+                        style: TextStyle(
+                            color: Colors.black54,
+                            fontSize: 14.0,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    Container(
+                        child: Column(
+                      children: snapshot.data.documents
+                          .map((DocumentSnapshot document) {
+                        return new ListTile(
+                          title: Text(
+                            document['occupation'] + "\n\n",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 19.0,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        );
+                      }).toList(),
+                    )),
+                    SizedBox(height: 120.0),
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 30.0),
+                      child: RaisedButton(
+                        onPressed: () async {
+                          if (_auth.signOut() != null) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => SignIn()),
+                            );
+                          }
+                        },
+                        padding: EdgeInsets.all(0.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                            colors: [Colors.orange[800], Colors.orange[300]],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          )),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 90.0, vertical: 6.0),
+                          child: Text(
+                            'Logout',
+                            style: TextStyle(color: Colors.white, fontSize: 20),
+                          ),
+                        ),
+                      ),
                     ),
                   ],
                 ),
