@@ -26,7 +26,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return SplashScreen(
-      seconds: 1,
+      seconds: 8,
       navigateAfterSeconds: AfterSplash(),
       title: Text(
         'Welcome In LX Navigator',
