@@ -21,16 +21,22 @@ class MyMap extends StatelessWidget {
 class MyMapPage extends StatelessWidget {
   var points = <LatLng>[
     //latLng ==> (latitude,Longitude)
-    LatLng(13.651055698, 100.496627),
-    LatLng(13.6511, 100.4960),
-    LatLng(13.6511, 100.4954),
-    LatLng(13.6519, 100.4954),
-    LatLng(13.6521, 100.4953),
-    LatLng(13.6522, 100.4952),
-    LatLng(13.6523, 100.4949),
-    LatLng(13.6523, 100.4943),
-    LatLng(13.6523, 100.4940),
-    LatLng(13.6520, 100.4940),
+    LatLng(13.651055698,100.496627),
+    LatLng(13.6511,100.4960),
+    LatLng(13.6511,100.4954),
+    LatLng(13.6519,100.4954),
+    LatLng(13.6521,100.4953),
+    LatLng(13.6522,100.4952),
+    LatLng(13.6523,100.4949),
+    LatLng(13.6523,100.4943),
+    LatLng(13.6523,100.4940),
+    LatLng(13.6519,100.4940),
+    LatLng(13.6519,100.4943),
+
+    
+
+
+
   ];
   MapController mapController = MapController();
   List<Marker> markers = [];
@@ -121,7 +127,7 @@ class MyMapPage extends StatelessWidget {
             Marker(
               width: 45.0,
               height: 45.0,
-              point: new LatLng(13.6520, 100.4940),
+              point: new LatLng(13.6519,100.4943),
               builder: (context) => new Container(
                 child: IconButton(
                     icon: Icon(Icons.location_on),

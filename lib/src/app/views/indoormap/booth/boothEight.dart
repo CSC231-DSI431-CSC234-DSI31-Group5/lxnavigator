@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:lxnavigator/src/app/views/indoormap/booth/boothEight.dart';
+import 'package:lxnavigator/src/app/views/indoormap/activity/activityEight.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothEleven.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothFive.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothFour.dart';
@@ -14,12 +13,13 @@ import 'package:lxnavigator/src/app/views/indoormap/booth/boothTwo.dart';
 import 'package:lxnavigator/src/home/views/home.dart';
 import 'package:photo_view/photo_view.dart';
 
-class IndoorMap extends StatefulWidget {
+//MC. Show Room Booth
+class BoothEight extends StatefulWidget {
   @override
-  _IndoorMapState createState() => _IndoorMapState();
+  _BoothEightState createState() => _BoothEightState();
 }
 
-class _IndoorMapState extends State<IndoorMap> {
+class _BoothEightState extends State<BoothEight> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,7 +57,7 @@ class _IndoorMapState extends State<IndoorMap> {
                     child: ClipRect(
                       child: PhotoView(
                         imageProvider: const AssetImage(
-                            "assets/images/indoormap/lxfirstfloor.jpg"),
+                            "assets/images/indoormap/booth/MC.png"),
                         maxScale: PhotoViewComputedScale.covered * 2.0,
                         minScale: PhotoViewComputedScale.contained * 0.8,
                         initialScale: PhotoViewComputedScale.covered,
@@ -138,7 +138,7 @@ class _IndoorMapState extends State<IndoorMap> {
                                 ),
                                 padding: EdgeInsets.all(8.0),
                                 onPressed: () async {
-                                  Navigator.pushReplacement(
+                                  Navigator.push(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => BoothThree()));
@@ -296,7 +296,7 @@ class _IndoorMapState extends State<IndoorMap> {
                                   side: BorderSide(color: Colors.black54),
                                   borderRadius: BorderRadius.circular(15.0),
                                 ),
-                                color: Colors.pink[200],
+                                color: Colors.pink[700],
                                 child: Text(
                                   'MC. SHOW ROOM',
                                   style: TextStyle(color: Colors.white),
@@ -379,7 +379,6 @@ class _IndoorMapState extends State<IndoorMap> {
                       ],
                     ),
                   ),
-                  new Padding(padding: EdgeInsets.all(5.0)),
                   //column 6
                   Container(
                     child: Row(
@@ -407,6 +406,18 @@ class _IndoorMapState extends State<IndoorMap> {
                                 }),
                           ),
                         ),
+                        SizedBox(width: 70.0),
+                        FlatButton(
+                            child: Image.asset(
+                                'assets/images/indoormap/button.png',
+                                height: 70.0,
+                                width: 70.0),
+                            onPressed: () async {
+                              Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ActivityEight()));
+                            }),
                       ],
                     ),
                   ),
@@ -420,3 +431,4 @@ class _IndoorMapState extends State<IndoorMap> {
     );
   }
 }
+// imageProvider: const AssetImage("assets/images/indoormap/lxfirstfloor.jpg",),

@@ -1,12 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lxnavigator/src/app/views/indoormap/activity/activitySeven.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothEight.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothEleven.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothFive.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothFour.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothNine.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothOne.dart';
-import 'package:lxnavigator/src/app/views/indoormap/booth/boothSeven.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothSix.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothTen.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothThree.dart';
@@ -14,12 +13,14 @@ import 'package:lxnavigator/src/app/views/indoormap/booth/boothTwo.dart';
 import 'package:lxnavigator/src/home/views/home.dart';
 import 'package:photo_view/photo_view.dart';
 
-class IndoorMap extends StatefulWidget {
+//Peel And Watch Booth
+class BoothSeven extends StatefulWidget {
   @override
-  _IndoorMapState createState() => _IndoorMapState();
+  _BoothSevenState createState() => _BoothSevenState();
 }
 
-class _IndoorMapState extends State<IndoorMap> {
+class _BoothSevenState extends State<BoothSeven> {
+  @override
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,7 +58,7 @@ class _IndoorMapState extends State<IndoorMap> {
                     child: ClipRect(
                       child: PhotoView(
                         imageProvider: const AssetImage(
-                            "assets/images/indoormap/lxfirstfloor.jpg"),
+                            "assets/images/indoormap/booth/Peel.png"),
                         maxScale: PhotoViewComputedScale.covered * 2.0,
                         minScale: PhotoViewComputedScale.contained * 0.8,
                         initialScale: PhotoViewComputedScale.covered,
@@ -253,7 +254,7 @@ class _IndoorMapState extends State<IndoorMap> {
                                   side: BorderSide(color: Colors.black54),
                                   borderRadius: BorderRadius.circular(15.0),
                                 ),
-                                color: Colors.orangeAccent,
+                                color: Colors.orangeAccent[700],
                                 child: Text(
                                   'PEEL AND WATCH',
                                   style: TextStyle(color: Colors.white),
@@ -379,7 +380,6 @@ class _IndoorMapState extends State<IndoorMap> {
                       ],
                     ),
                   ),
-                  new Padding(padding: EdgeInsets.all(5.0)),
                   //column 6
                   Container(
                     child: Row(
@@ -407,6 +407,18 @@ class _IndoorMapState extends State<IndoorMap> {
                                 }),
                           ),
                         ),
+                        SizedBox(width: 70.0),
+                        FlatButton(
+                            child: Image.asset(
+                                'assets/images/indoormap/button.png',
+                                height: 70.0,
+                                width: 70.0),
+                            onPressed: () async {
+                              Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ActivitySeven()));
+                            }),
                       ],
                     ),
                   ),
@@ -420,3 +432,4 @@ class _IndoorMapState extends State<IndoorMap> {
     );
   }
 }
+// imageProvider: const AssetImage("assets/images/indoormap/lxfirstfloor.jpg",),
