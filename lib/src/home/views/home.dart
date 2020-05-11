@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +10,7 @@ import 'package:responsive_container/responsive_container.dart';
 class Home extends StatelessWidget {
   Widget showLogo() {
     return ResponsiveContainer(
-        heightPercent: 30,widthPercent: 80,
+      heightPercent: 30, widthPercent: 80,
 //      width: 225.0, // Control the logo size
 //      height: 225.0,
       child: Image.asset('assets/images/logo/Logo1.png'),
@@ -35,34 +36,38 @@ class Home extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        padding: EdgeInsets.only(top: 20.0),
+//        padding: EdgeInsets.only(top: 20.0),
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              SizedBox(child: ResponsiveContainer(
-            heightPercent: 5.0,
-            widthPercent: 100.0,),),
+              SizedBox(
+                child: ResponsiveContainer(
+                  heightPercent: 5.0,
+                  widthPercent: 100.0,
+                ),
+              ),
               showLogo(),
-
               new Container(
 //                  padding: new EdgeInsets.all(5.0),
-                  child: ResponsiveContainer(
-                    widthPercent: 100.0, heightPercent: 6.0,
-                      child: new Center(
-                        child: Text(
-                          'LX Navigator',
-                          style: TextStyle(
-                              color: Colors.black54,
-                              fontSize: 30.0,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      )
-                  ),
+                child: ResponsiveContainer(
+                    widthPercent: 100.0,
+                    heightPercent: 6.0,
+                    child: new Center(
+                      child: AutoSizeText(
+                        'LX Navigator',
+                        style: TextStyle(
+                            color: Colors.black54,
+                            fontSize: 30.0,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    )),
+              ),
+              SizedBox(
+                child: ResponsiveContainer(
+                  heightPercent: 27.0,
+                  widthPercent: 100.0,
                 ),
-
-              SizedBox(child: ResponsiveContainer(
-                heightPercent: 25.0,
-                widthPercent: 100.0,),),
+              ),
               new SizedBox(
                 child: ResponsiveContainer(
                   heightPercent: 10.0,
@@ -203,23 +208,24 @@ class _DrawerCodeState extends State<DrawerCode> {
                       ),
                     ),
                     Container(
+
                         child: Column(
-                      children: snapshot.data.documents
-                          .map((DocumentSnapshot document) {
-                        return new ListTile(
-                          title: Text(
-                            document['firstname'] +
-                                " " +
-                                document['lastname'] +
-                                "\n\n",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 19.0,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        );
-                      }).toList(),
-                    )),
+                          children: snapshot.data.documents
+                              .map((DocumentSnapshot document) {
+                            return new ListTile(
+                              title: AutoSizeText(
+                                document['firstname'] +
+                                    " " +
+                                    document['lastname'] +
+                                    "\n\n",
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 19.0,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            );
+                          }).toList(),
+                        )),
                     new Padding(
                       padding: new EdgeInsets.only(left: 5.0),
                       child: new Text(
@@ -231,11 +237,12 @@ class _DrawerCodeState extends State<DrawerCode> {
                       ),
                     ),
                     Container(
+
                         child: Column(
                       children: snapshot.data.documents
                           .map((DocumentSnapshot document) {
                         return new ListTile(
-                          title: Text(
+                          title: AutoSizeText(
                             document['email'] + "\n\n",
                             style: TextStyle(
                                 color: Colors.black,
@@ -256,11 +263,12 @@ class _DrawerCodeState extends State<DrawerCode> {
                       ),
                     ),
                     Container(
+
                         child: Column(
                       children: snapshot.data.documents
                           .map((DocumentSnapshot document) {
                         return new ListTile(
-                          title: Text(
+                          title: AutoSizeText(
                             document['occupation'] + "\n\n",
                             style: TextStyle(
                                 color: Colors.black,
@@ -270,7 +278,12 @@ class _DrawerCodeState extends State<DrawerCode> {
                         );
                       }).toList(),
                     )),
-                    SizedBox(height: 120.0),
+                    SizedBox(
+                      child: ResponsiveContainer(
+                        heightPercent: 15,
+                        widthPercent: 100,
+                      ),
+                    ),
                     Container(
                       padding: EdgeInsets.symmetric(horizontal: 30.0),
                       child: RaisedButton(
@@ -283,18 +296,23 @@ class _DrawerCodeState extends State<DrawerCode> {
                           }
                         },
                         padding: EdgeInsets.all(0.0),
-                        child: Container(
-                          decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                            colors: [Colors.orange[800], Colors.orange[300]],
-                            begin: Alignment.centerLeft,
-                            end: Alignment.centerRight,
-                          )),
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 90.0, vertical: 6.0),
-                          child: Text(
-                            'Logout',
-                            style: TextStyle(color: Colors.white, fontSize: 20),
+                        child: ResponsiveContainer(
+                          heightPercent: 5,
+                          widthPercent: 80,
+                          child: Container(
+                            decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                              colors: [Colors.orange[800], Colors.orange[300]],
+                              begin: Alignment.centerLeft,
+                              end: Alignment.centerRight,
+                            )),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 90.0, vertical: 6.0),
+                            child: AutoSizeText(
+                              'Logout',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20),
+                            ),
                           ),
                         ),
                       ),

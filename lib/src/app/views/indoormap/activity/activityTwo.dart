@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:lxnavigator/src/app/views/indoormap/booth/boothTwo.dart';
@@ -127,11 +128,12 @@ class _ActivityTwoState extends State<ActivityTwo> {
                             textBaseline: TextBaseline.alphabetic,
                             children: <Widget>[
                               Expanded(
-                                child: Container(
+                                child: ResponsiveContainer(
+                                  heightPercent: 90, widthPercent: 95,
                                   padding: EdgeInsets.symmetric(
                                       vertical: 150.0, horizontal: 65.0),
-                                  child: RichText(
-                                    text: new TextSpan(
+                                  child: AutoSizeText.rich(
+                                    TextSpan(
                                       children: <TextSpan>[
                                         TextSpan(
                                             text: snapshot.data['boothName'] +
