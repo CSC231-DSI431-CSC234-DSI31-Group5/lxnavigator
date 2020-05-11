@@ -4,12 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:lxnavigator/src/app/views/mapbox/map.dart';
 import 'package:lxnavigator/src/app/views/indoormap/indoormap.dart';
 import 'package:lxnavigator/src/aunthenticate/sign_in.dart';
+import 'package:responsive_container/responsive_container.dart';
 
 class Home extends StatelessWidget {
   Widget showLogo() {
-    return Container(
-      width: 225.0, // Control the logo size
-      height: 225.0,
+    return ResponsiveContainer(
+        heightPercent: 30,widthPercent: 80,
+//      width: 225.0, // Control the logo size
+//      height: 225.0,
       child: Image.asset('assets/images/logo/Logo1.png'),
     );
   }
@@ -37,66 +39,87 @@ class Home extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              SizedBox(height: 15.0),
+              SizedBox(child: ResponsiveContainer(
+            heightPercent: 5.0,
+            widthPercent: 100.0,),),
               showLogo(),
-              new Padding(
-                padding: new EdgeInsets.all(5.0),
-                child: new Text(
-                  'LX Navigator',
-                  style: TextStyle(
-                      color: Colors.black54,
-                      fontSize: 30.0,
-                      fontWeight: FontWeight.bold),
+
+              new Container(
+//                  padding: new EdgeInsets.all(5.0),
+                  child: ResponsiveContainer(
+                    widthPercent: 100.0, heightPercent: 6.0,
+                      child: new Center(
+                        child: Text(
+                          'LX Navigator',
+                          style: TextStyle(
+                              color: Colors.black54,
+                              fontSize: 30.0,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      )
+                  ),
+                ),
+
+              SizedBox(child: ResponsiveContainer(
+                heightPercent: 25.0,
+                widthPercent: 100.0,),),
+              new SizedBox(
+                child: ResponsiveContainer(
+                  heightPercent: 10.0,
+                  widthPercent: 100.0,
+                  child: new RaisedButton(
+                      color: Colors.yellow[800],
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(
+                            Icons.location_on,
+                            color: Colors.white,
+                            size: 30.0,
+                          ), // icon
+
+                          Text(
+                            "Map",
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 30.0),
+                          ), // text
+                        ],
+                      ),
+                      onPressed: () async {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => MyMap()));
+                      }),
                 ),
               ),
-              SizedBox(height: 180.0),
               new SizedBox(
-                height: 60,
-                child: new RaisedButton(
-                    color: Colors.yellow[800],
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Icon(
-                          Icons.location_on,
-                          color: Colors.white,
-                          size: 30.0,
-                        ), // icon
+                child: ResponsiveContainer(
+                  heightPercent: 10.0,
+                  widthPercent: 100.0,
+                  child: new RaisedButton(
+                      color: Colors.orange[800],
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(
+                            Icons.map,
+                            color: Colors.white,
+                            size: 30.0,
+                          ), // icon
 
-                        Text(
-                          "Map",
-                          style: TextStyle(color: Colors.white, fontSize: 30.0),
-                        ), // text
-                      ],
-                    ),
-                    onPressed: () async {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => MyMap()));
-                    }),
-              ),
-              new SizedBox(
-                height: 60,
-                child: new RaisedButton(
-                    color: Colors.orange[800],
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Icon(
-                          Icons.map,
-                          color: Colors.white,
-                          size: 30.0,
-                        ), // icon
-
-                        Text(
-                          "Floor Plan",
-                          style: TextStyle(color: Colors.white, fontSize: 30.0),
-                        ), // text
-                      ],
-                    ),
-                    onPressed: () async {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => IndoorMap()));
-                    }),
+                          Text(
+                            "Floor Plan",
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 30.0),
+                          ), // text
+                        ],
+                      ),
+                      onPressed: () async {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => IndoorMap()));
+                      }),
+                ),
               ),
             ],
           ),
