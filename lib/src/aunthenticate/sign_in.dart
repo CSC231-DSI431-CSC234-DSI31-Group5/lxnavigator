@@ -4,6 +4,7 @@ import 'package:lxnavigator/src/aunthenticate/reset.dart';
 import 'package:lxnavigator/src/home/views/home.dart';
 import 'package:lxnavigator/src/presenters/auth.dart';
 import 'package:lxnavigator/src/shared/loading.dart';
+import 'package:responsive_container/responsive_container.dart';
 
 class SignIn extends StatefulWidget {
   @override
@@ -56,7 +57,8 @@ class _SignInState extends State<SignIn> {
                           style: TextStyle(
                               color: Colors.black54,
                               fontSize: 30.0,
-                              fontWeight: FontWeight.bold),
+                              fontWeight: FontWeight.bold,
+                              inherit: false),
                         ),
                       ),
                       SizedBox(height: 5.0),
@@ -66,7 +68,8 @@ class _SignInState extends State<SignIn> {
                               labelStyle: TextStyle(
                                   color: Colors.black54,
                                   fontSize: 20.0,
-                                  fontWeight: FontWeight.bold)),
+                                  fontWeight: FontWeight.bold,
+                                  inherit: false)),
                           validator: (val) =>
                               val.isEmpty ? 'Enter an email' : null,
                           onChanged: (val) {
@@ -79,7 +82,8 @@ class _SignInState extends State<SignIn> {
                               labelStyle: TextStyle(
                                   color: Colors.black54,
                                   fontSize: 20.0,
-                                  fontWeight: FontWeight.bold)),
+                                  fontWeight: FontWeight.bold,
+                                  inherit: false)),
                           obscureText: true,
                           validator: (val) => val.length < 6
                               ? 'Enter a password 6+ chars long'
@@ -90,9 +94,14 @@ class _SignInState extends State<SignIn> {
                       SizedBox(height: 10.0),
                       RaisedButton(
                           color: Colors.blue,
-                          child: Text(
-                            '                           Sign In                           ',
-                            style: TextStyle(color: Colors.white),
+                          child: Center(
+                            child: Text(
+                              'Sign In',
+                              style: TextStyle(
+                                color: Colors.white,
+                                inherit: false,
+                              ),
+                            ),
                           ),
                           onPressed: () async {
                             if (_formKey.currentState.validate()) {
@@ -118,9 +127,12 @@ class _SignInState extends State<SignIn> {
                       SizedBox(height: 5.0),
                       RaisedButton(
                           color: Colors.indigo,
-                          child: Text(
-                            '                          Register                          ',
-                            style: TextStyle(color: Colors.white),
+                          child: Center(
+                            child: Text(
+                              'Register',
+                              style: TextStyle(
+                                  color: Colors.white, inherit: false),
+                            ),
                           ),
                           onPressed: () {
                             // widget.toggleView();
@@ -135,7 +147,8 @@ class _SignInState extends State<SignIn> {
                             'Forgot Password?',
                             style: TextStyle(
                                 decoration: TextDecoration.underline,
-                                color: Colors.black),
+                                color: Colors.black,
+                                inherit: false),
                           ),
                           onPressed: () {
                             Navigator.push(

@@ -42,6 +42,7 @@ dependencies:
   bubble_tab_indicator: ^0.1.4
   responsive_container: ^0.0.1
   http: ^0.12.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

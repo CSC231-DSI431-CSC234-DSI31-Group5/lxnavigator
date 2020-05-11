@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:lxnavigator/src/aunthenticate/sign_in.dart';
 import 'package:lxnavigator/src/presenters/auth.dart';
 import 'package:lxnavigator/src/shared/loading.dart';
+import 'package:responsive_container/responsive_container.dart';
 
 class Reset extends StatefulWidget {
   @override
@@ -46,76 +47,82 @@ class _ResetState extends State<Reset> {
                 padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
                 child: Form(
                   key: _formKey,
-                  child: Column(
-                    children: <Widget>[
-                      Row(children: [
-                        IconButton(
-                            icon: Icon(Icons.arrow_back_ios),
-                            iconSize: 30,
-                            alignment: Alignment(-15, 20),
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => SignIn()),
-                              );
-                            }),
-                      ]),
-                      SizedBox(height: 50.0),
-                      showLogo(),
-                      new Padding(
-                        padding: new EdgeInsets.all(5.0),
-                        child: new Text(
-                          'Reset Password',
-                          style: TextStyle(
-                              color: Colors.black54,
-                              fontSize: 30.0,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      SizedBox(height: 20.0),
-                      TextFormField(
-                          decoration: InputDecoration(
-                              labelText: 'Email',
-                              labelStyle: TextStyle(
-                                  color: Colors.black54,
-                                  fontSize: 20.0,
-                                  fontWeight: FontWeight.bold)),
-                          validator: (val) =>
-                              val.isEmpty ? 'Enter an email' : null,
-                          onChanged: (val) {
-                            setState(() => email = val);
-                          }),
-                      SizedBox(height: 20.0),
-                      FlatButton(
-                          color: Colors.indigo,
-                          child: Text(
-                            '       reset       ',
-                            style: TextStyle(color: Colors.white),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: <Widget>[
+                        Row(children: [
+                          IconButton(
+                              icon: Icon(Icons.arrow_back_ios),
+                              iconSize: 30,
+                              alignment: Alignment(-15, 20),
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => SignIn()),
+                                );
+                              }),
+                        ]),
+                        SizedBox(height: 50.0),
+                        showLogo(),
+                        new Padding(
+                          padding: new EdgeInsets.all(5.0),
+                          child: new Text(
+                            'Reset Password',
+                            style: TextStyle(
+                                color: Colors.black54,
+                                fontSize: 30.0,
+                                fontWeight: FontWeight.bold,
+                                inherit: false),
                           ),
-                          onPressed: () async {
-                            _auth.sendPasswordResetEmail(email);
-                            if (email != null) {
-                              Flushbar(
-                                title: 'Reset Password',
-                                message:
-                                    'We send the detail to $email successfully',
-                                icon: Icon(
-                                  Icons.info_outline,
-                                  size: 28,
-                                  color: Colors.blue.shade300,
-                                ),
-                                leftBarIndicatorColor: Colors.blue.shade300,
-                                duration: Duration(seconds: 3),
-                              ).show(context);
-                            }
-                          }),
-                      SizedBox(height: 12.0),
-                      Text(
-                        error,
-                        style: TextStyle(color: Colors.red, fontSize: 14.0),
-                      )
-                    ],
+                        ),
+                        SizedBox(height: 20.0),
+                        TextFormField(
+                            decoration: InputDecoration(
+                                labelText: 'Email',
+                                labelStyle: TextStyle(
+                                    color: Colors.black54,
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.bold,
+                                    inherit: false)),
+                            validator: (val) =>
+                                val.isEmpty ? 'Enter an email' : null,
+                            onChanged: (val) {
+                              setState(() => email = val);
+                            }),
+                        SizedBox(height: 20.0),
+                        FlatButton(
+                            color: Colors.indigo,
+                            child: Center(
+                              child: Text(
+                                'reset',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ),
+                            onPressed: () async {
+                              _auth.sendPasswordResetEmail(email);
+                              if (email != null) {
+                                Flushbar(
+                                  title: 'Reset Password',
+                                  message:
+                                      'We send the detail to $email successfully',
+                                  icon: Icon(
+                                    Icons.info_outline,
+                                    size: 28,
+                                    color: Colors.blue.shade300,
+                                  ),
+                                  leftBarIndicatorColor: Colors.blue.shade300,
+                                  duration: Duration(seconds: 3),
+                                ).show(context);
+                              }
+                            }),
+                        SizedBox(height: 12.0),
+                        Text(
+                          error,
+                          style: TextStyle(color: Colors.red, fontSize: 14.0),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),

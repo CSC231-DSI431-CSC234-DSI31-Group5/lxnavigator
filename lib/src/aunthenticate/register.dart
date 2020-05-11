@@ -3,6 +3,7 @@ import 'package:lxnavigator/src/aunthenticate/sign_in.dart';
 import 'package:lxnavigator/src/home/views/home.dart';
 import 'package:lxnavigator/src/presenters/auth.dart';
 import 'package:lxnavigator/src/shared/loading.dart';
+import 'package:responsive_container/responsive_container.dart';
 
 // "stful" then press tab to show class....extends... StatefulWidget{}
 //  and class ...._State extends State<name of class from above> {}
@@ -75,10 +76,10 @@ class _RegisterState extends State<Register> {
                         child: new Text(
                           'Register',
                           style: TextStyle(
-                            color: Colors.black54,
-                            fontSize: 30.0,
-                            fontWeight: FontWeight.bold,
-                          ),
+                              color: Colors.black54,
+                              fontSize: 30.0,
+                              fontWeight: FontWeight.bold,
+                              inherit: false),
                         ),
                       ),
                       TextFormField(
@@ -87,12 +88,13 @@ class _RegisterState extends State<Register> {
                             labelStyle: TextStyle(
                                 color: Colors.black54,
                                 fontSize: 15.0,
-                                fontWeight: FontWeight.bold),
+                                fontWeight: FontWeight.bold,
+                                inherit: false),
                             helperText: 'Enter your e-mail account',
                             helperStyle: TextStyle(
-                              color: Colors.black54,
-                              fontSize: 12.0,
-                            ),
+                                color: Colors.black54,
+                                fontSize: 12.0,
+                                inherit: false),
                           ),
                           validator: (val) =>
                               val.isEmpty ? 'Enter an email' : null,
@@ -105,12 +107,13 @@ class _RegisterState extends State<Register> {
                             labelStyle: TextStyle(
                                 color: Colors.black54,
                                 fontSize: 15.0,
-                                fontWeight: FontWeight.bold),
+                                fontWeight: FontWeight.bold,
+                                inherit: false),
                             helperText: 'Enter your password',
                             helperStyle: TextStyle(
-                              color: Colors.black54,
-                              fontSize: 12.0,
-                            ),
+                                color: Colors.black54,
+                                fontSize: 12.0,
+                                inherit: false),
                           ),
                           obscureText: true,
                           validator: (val) => val.length < 6
@@ -125,12 +128,13 @@ class _RegisterState extends State<Register> {
                             labelStyle: TextStyle(
                                 color: Colors.black54,
                                 fontSize: 15.0,
-                                fontWeight: FontWeight.bold),
+                                fontWeight: FontWeight.bold,
+                                inherit: false),
                             helperText: 'Enter your firstname',
                             helperStyle: TextStyle(
-                              color: Colors.black54,
-                              fontSize: 12.0,
-                            ),
+                                color: Colors.black54,
+                                fontSize: 12.0,
+                                inherit: false),
                           ),
                           validator: (val) =>
                               val.isEmpty ? 'Enter an First name' : null,
@@ -143,12 +147,13 @@ class _RegisterState extends State<Register> {
                             labelStyle: TextStyle(
                                 color: Colors.black54,
                                 fontSize: 15.0,
-                                fontWeight: FontWeight.bold),
+                                fontWeight: FontWeight.bold,
+                                inherit: false),
                             helperText: 'Enter your lastname',
                             helperStyle: TextStyle(
-                              color: Colors.black54,
-                              fontSize: 12.0,
-                            ),
+                                color: Colors.black54,
+                                fontSize: 12.0,
+                                inherit: false),
                           ),
                           validator: (val) =>
                               val.isEmpty ? 'Enter an Last name' : null,
@@ -161,12 +166,13 @@ class _RegisterState extends State<Register> {
                             labelStyle: TextStyle(
                                 color: Colors.black54,
                                 fontSize: 15.0,
-                                fontWeight: FontWeight.bold),
+                                fontWeight: FontWeight.bold,
+                                inherit: false),
                             helperText: 'Enter your occupation',
                             helperStyle: TextStyle(
-                              color: Colors.black54,
-                              fontSize: 12.0,
-                            ),
+                                color: Colors.black54,
+                                fontSize: 12.0,
+                                inherit: false),
                           ),
                           validator: (val) =>
                               val.isEmpty ? 'Enter an Occupation' : null,
@@ -176,9 +182,12 @@ class _RegisterState extends State<Register> {
                       SizedBox(height: 10.0),
                       RaisedButton(
                           color: Colors.indigo,
-                          child: Text(
-                            '                           Register                           ',
-                            style: TextStyle(color: Colors.white),
+                          child: Center(
+                            child: Text(
+                              'Register',
+                              style: TextStyle(
+                                  color: Colors.white, inherit: false),
+                            ),
                           ),
                           onPressed: () async {
                             if (_formKey.currentState.validate()) {
