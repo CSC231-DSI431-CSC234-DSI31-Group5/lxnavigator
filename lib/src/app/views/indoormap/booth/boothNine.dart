@@ -76,14 +76,17 @@ class _BoothNineState extends State<BoothNine> {
                     child: ResponsiveContainer(
                       heightPercent: 5,
                       widthPercent: 100,
-                      padding: EdgeInsets.only(right: 10),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
+                          ResponsiveContainer(
+                            heightPercent: 5,
+                            widthPercent: 5,
+                          ),
                           ButtonTheme(
                             child: ResponsiveContainer(
                               heightPercent: 100,
-                              widthPercent: 27,
+                              widthPercent: 24,
                               child: new Center(
                                 child: RaisedButton(
                                     shape: RoundedRectangleBorder(
@@ -92,7 +95,8 @@ class _BoothNineState extends State<BoothNine> {
                                     ),
                                     color: Colors.yellow[600],
                                     child: AutoSizeText(
-                                      'VR AR MR',maxLines:1,
+                                      'VR AR MR',
+                                      maxLines: 1,
                                       style: TextStyle(color: Colors.white),
                                     ),
                                     padding: EdgeInsets.all(0.0),
@@ -107,11 +111,14 @@ class _BoothNineState extends State<BoothNine> {
                             ),
                           ),
 //                          SizedBox(width: 7.0),
+                          ResponsiveContainer(
+                            heightPercent: 5,
+                            widthPercent: 2,
+                          ),
                           ButtonTheme(
                             child: ResponsiveContainer(
                               heightPercent: 5,
-                              widthPercent: 30,
-                              padding: EdgeInsets.only(right: 10),
+                              widthPercent: 27,
                               child: new Center(
                                 child: RaisedButton(
                                     shape: RoundedRectangleBorder(
@@ -120,7 +127,8 @@ class _BoothNineState extends State<BoothNine> {
                                     ),
                                     color: Colors.yellow[600],
                                     child: AutoSizeText(
-                                      'WORKSHOP',maxLines:1,
+                                      'WORKSHOP',
+                                      maxLines: 1,
                                       style: TextStyle(color: Colors.white),
                                     ),
 //                                  padding: EdgeInsets.symmetric(horizontal: 2),
@@ -134,12 +142,16 @@ class _BoothNineState extends State<BoothNine> {
                               ),
                             ),
                           ),
+                          ResponsiveContainer(
+                            heightPercent: 5,
+                            widthPercent: 2,
+                          ),
 //                          SizedBox(width: 7.0),
 
                           ButtonTheme(
                             child: ResponsiveContainer(
                               heightPercent: 5,
-                              widthPercent: 40,
+                              widthPercent: 35,
                               child: new Container(
                                 child: RaisedButton(
                                     shape: RoundedRectangleBorder(
@@ -148,7 +160,8 @@ class _BoothNineState extends State<BoothNine> {
                                     ),
                                     color: Colors.yellow[600],
                                     child: AutoSizeText(
-                                      'DESIGN STUDIES',maxLines:1,
+                                      'DESIGN STUDIES',
+                                      maxLines: 1,
                                       style: TextStyle(color: Colors.white),
                                     ),
 //                                  padding: EdgeInsets.all(8.0),
@@ -161,6 +174,10 @@ class _BoothNineState extends State<BoothNine> {
                                     }),
                               ),
                             ),
+                          ),
+                          ResponsiveContainer(
+                            heightPercent: 5,
+                            widthPercent: 5,
                           ),
                         ],
                       ),
@@ -175,16 +192,18 @@ class _BoothNineState extends State<BoothNine> {
                     child: ResponsiveContainer(
                       heightPercent: 5,
                       widthPercent: 100,
-                      padding: EdgeInsets.symmetric(horizontal: 10),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
+                          ResponsiveContainer(
+                            heightPercent: 5,
+                            widthPercent: 5,
+                          ),
 //                          SizedBox(width: 5.0),
                           ButtonTheme(
                             child: ResponsiveContainer(
                               heightPercent: 5,
-                              widthPercent: 55,
-                              padding: EdgeInsets.only(right: 10),
+                              widthPercent: 50,
                               child: new Container(
                                 child: RaisedButton(
                                     shape: RoundedRectangleBorder(
@@ -193,7 +212,8 @@ class _BoothNineState extends State<BoothNine> {
                                     ),
                                     color: Colors.yellow[600],
                                     child: AutoSizeText(
-                                      'SELF DIRECTED LEARNING',maxLines:1,
+                                      'SELF DIRECTED LEARNING',
+                                      maxLines: 1,
                                       style: TextStyle(color: Colors.white),
                                     ),
 //                                  padding: EdgeInsets.all(8.0),
@@ -209,10 +229,14 @@ class _BoothNineState extends State<BoothNine> {
                           ),
                           //
 //                          SizedBox(width: 7.0),
+                          ResponsiveContainer(
+                            heightPercent: 5,
+                            widthPercent: 2,
+                          ),
                           ButtonTheme(
                             child: ResponsiveContainer(
                               heightPercent: 5,
-                              widthPercent: 40,
+                              widthPercent: 38,
                               child: new Container(
                                 child: RaisedButton(
                                     shape: RoundedRectangleBorder(
@@ -221,7 +245,8 @@ class _BoothNineState extends State<BoothNine> {
                                     ),
                                     color: Colors.yellow[600],
                                     child: AutoSizeText(
-                                      'ACTIVE EXHIBTION',maxLines:1,
+                                      'ACTIVE EXHIBTION',
+                                      maxLines: 1,
                                       style: TextStyle(color: Colors.white),
                                     ),
                                     padding: EdgeInsets.all(8.0),
@@ -235,12 +260,17 @@ class _BoothNineState extends State<BoothNine> {
                               ),
                             ),
                           ),
+                          ResponsiveContainer(
+                            heightPercent: 5,
+                            widthPercent: 5,
+                          ),
                         ],
                       ),
                     ),
                   ),
                   new Padding(
-                    padding: new EdgeInsets.all(5.0),
+                    padding:
+                        new EdgeInsets.symmetric(vertical: 5, horizontal: 20),
                     child: AutoSizeText(
                       '___________________________________________________________________________',
                       maxLines: 1,
@@ -257,15 +287,18 @@ class _BoothNineState extends State<BoothNine> {
                     child: ResponsiveContainer(
                       heightPercent: 5,
                       widthPercent: 100,
-                      padding: EdgeInsets.symmetric(horizontal: 10),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
 //                          SizedBox(width: 5.0),
+                          ResponsiveContainer(
+                            heightPercent: 5,
+                            widthPercent: 5,
+                          ),
                           ButtonTheme(
                             child: ResponsiveContainer(
                               heightPercent: 5,
-                              widthPercent: 40,
+                              widthPercent: 38,
                               padding: EdgeInsets.only(right: 10),
                               child: new Container(
                                 child: RaisedButton(
@@ -275,7 +308,8 @@ class _BoothNineState extends State<BoothNine> {
                                     ),
                                     color: Colors.orangeAccent,
                                     child: AutoSizeText(
-                                      'ESCAPE ROOM',maxLines:1,
+                                      'ESCAPE ROOM',
+                                      maxLines: 1,
                                       style: TextStyle(color: Colors.white),
                                     ),
 //                                    padding: EdgeInsets.all(8.0),
@@ -290,10 +324,14 @@ class _BoothNineState extends State<BoothNine> {
                             ),
                           ),
 //                          SizedBox(width: 7.0),
+                          ResponsiveContainer(
+                            heightPercent: 5,
+                            widthPercent: 2,
+                          ),
                           ButtonTheme(
                             child: ResponsiveContainer(
                               heightPercent: 5,
-                              widthPercent: 55,
+                              widthPercent: 50,
                               child: new Container(
                                 child: RaisedButton(
                                     shape: RoundedRectangleBorder(
@@ -302,7 +340,8 @@ class _BoothNineState extends State<BoothNine> {
                                     ),
                                     color: Colors.orangeAccent,
                                     child: AutoSizeText(
-                                      'PEEL AND WATCH',maxLines:1,
+                                      'PEEL AND WATCH',
+                                      maxLines: 1,
                                       style: TextStyle(color: Colors.white),
                                     ),
 //                                    padding: EdgeInsets.all(8.0),
@@ -316,12 +355,17 @@ class _BoothNineState extends State<BoothNine> {
                               ),
                             ),
                           ),
+                          ResponsiveContainer(
+                            heightPercent: 5,
+                            widthPercent: 5,
+                          ),
                         ],
                       ),
                     ),
                   ),
                   new Padding(
-                    padding: new EdgeInsets.all(5.0),
+                    padding:
+                        new EdgeInsets.symmetric(vertical: 5, horizontal: 20),
                     child: AutoSizeText(
                       '___________________________________________________________________________',
                       maxLines: 1,
@@ -338,15 +382,18 @@ class _BoothNineState extends State<BoothNine> {
                     child: ResponsiveContainer(
                       heightPercent: 5,
                       widthPercent: 100,
-                      padding: EdgeInsets.symmetric(horizontal: 10),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
 //                          SizedBox(width: 5.0),
+                          ResponsiveContainer(
+                            heightPercent: 5,
+                            widthPercent: 5,
+                          ),
                           ButtonTheme(
                             child: ResponsiveContainer(
                               heightPercent: 5,
-                              widthPercent: 46,
+                              widthPercent: 40,
                               padding: EdgeInsets.only(right: 10),
                               child: new Container(
                                 child: RaisedButton(
@@ -356,7 +403,8 @@ class _BoothNineState extends State<BoothNine> {
                                     ),
                                     color: Colors.pink[200],
                                     child: AutoSizeText(
-                                      'MC. SHOW ROOM',maxLines:1,
+                                      'MC. SHOW ROOM',
+                                      maxLines: 1,
                                       style: TextStyle(color: Colors.white),
                                     ),
                                     padding: EdgeInsets.all(8.0),
@@ -371,6 +419,10 @@ class _BoothNineState extends State<BoothNine> {
                             ),
                           ),
 //                          SizedBox(width: 7.0),
+                          ResponsiveContainer(
+                            heightPercent: 5,
+                            widthPercent: 2,
+                          ),
                           ButtonTheme(
                             child: ResponsiveContainer(
                               heightPercent: 5,
@@ -381,9 +433,10 @@ class _BoothNineState extends State<BoothNine> {
                                       side: BorderSide(color: Colors.black54),
                                       borderRadius: BorderRadius.circular(15.0),
                                     ),
-                                    color: Colors.pink[900],
+                                    color: Colors.pink[700],
                                     child: AutoSizeText(
-                                      'LX BUILDING STUDY',maxLines:1,
+                                      'LX BUILDING STUDY',
+                                      maxLines: 1,
                                       style: TextStyle(color: Colors.white),
                                     ),
                                     padding: EdgeInsets.all(8.0),
@@ -397,13 +450,19 @@ class _BoothNineState extends State<BoothNine> {
                               ),
                             ),
                           ),
+                          ResponsiveContainer(
+                            heightPercent: 5,
+                            widthPercent: 5,
+                          ),
                         ],
                       ),
                     ),
                   ),
+//
                   new Padding(
-                    padding: new EdgeInsets.all(5.0),
-                    child:  AutoSizeText(
+                    padding:
+                        new EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+                    child: AutoSizeText(
                       '___________________________________________________________________________',
                       maxLines: 1,
                       style: TextStyle(
@@ -414,20 +473,23 @@ class _BoothNineState extends State<BoothNine> {
                     ),
                   ),
                   //column 5
-                  new Padding(padding: EdgeInsets.all(2.0)),
+
                   Container(
                     child: ResponsiveContainer(
                       heightPercent: 5,
                       widthPercent: 100,
-                      padding: EdgeInsets.symmetric(horizontal: 10),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
 //                          SizedBox(width: 5.0),
+                          ResponsiveContainer(
+                            heightPercent: 5,
+                            widthPercent: 5,
+                          ),
                           ButtonTheme(
                             child: ResponsiveContainer(
                               heightPercent: 5,
-                              widthPercent: 92,
+                              widthPercent: 90,
                               child: new Container(
                                 child: RaisedButton(
                                     shape: RoundedRectangleBorder(
@@ -436,7 +498,8 @@ class _BoothNineState extends State<BoothNine> {
                                     ),
                                     color: Colors.blueGrey[500],
                                     child: AutoSizeText(
-                                      'ENTREPRENEUR INNOVATION SHOW CART',maxLines:1,
+                                      'ENTREPRENEUR INNOVATION SHOW CART',
+                                      maxLines: 1,
                                       style: TextStyle(color: Colors.white),
                                     ),
                                     padding: EdgeInsets.all(8.0),
@@ -450,20 +513,26 @@ class _BoothNineState extends State<BoothNine> {
                               ),
                             ),
                           ),
+                          ResponsiveContainer(
+                            heightPercent: 5,
+                            widthPercent: 5,
+                          ),
                         ],
                       ),
                     ),
                   ),
-                  new Padding(padding: EdgeInsets.all(2.0)),
                   //column 6
                   Container(
                     child: ResponsiveContainer(
                       heightPercent: 10,
                       widthPercent: 100,
-                      padding: EdgeInsets.symmetric(horizontal: 10),
                       child: Row(
                         children: <Widget>[
 //                          SizedBox(width: 30.0),
+                          ResponsiveContainer(
+                            heightPercent: 5,
+                            widthPercent: 5,
+                          ),
                           ButtonTheme(
                             child: ResponsiveContainer(
                               heightPercent: 5,
@@ -476,7 +545,8 @@ class _BoothNineState extends State<BoothNine> {
                                     ),
                                     color: Colors.blueGrey[500],
                                     child: AutoSizeText(
-                                      'POPUP EXHIBITION',maxLines:1,
+                                      'POPUP EXHIBITION',
+                                      maxLines: 1,
                                       style: TextStyle(color: Colors.white),
                                     ),
 //                                    padding: EdgeInsets.all(8.0),
@@ -507,6 +577,10 @@ class _BoothNineState extends State<BoothNine> {
                                     MaterialPageRoute(
                                         builder: (context) => ActivityNine()));
                               }),
+                          ResponsiveContainer(
+                            heightPercent: 5,
+                            widthPercent: 5,
+                          ),
                         ],
                       ),
                     ),

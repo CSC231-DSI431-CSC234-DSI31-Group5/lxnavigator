@@ -78,14 +78,17 @@ class _IndoorMapState extends State<IndoorMap> {
                     child: ResponsiveContainer(
                       heightPercent: 5,
                       widthPercent: 100,
-                      padding: EdgeInsets.only(right: 10),
+
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
+                          ResponsiveContainer(
+                            heightPercent: 5, widthPercent: 5,
+                          ),
                           ButtonTheme(
                             child: ResponsiveContainer(
                               heightPercent: 100,
-                              widthPercent: 27,
+                              widthPercent: 24,
                               child: new Center(
                                 child: RaisedButton(
                                     shape: RoundedRectangleBorder(
@@ -109,11 +112,13 @@ class _IndoorMapState extends State<IndoorMap> {
                             ),
                           ),
 //                          SizedBox(width: 7.0),
+                          ResponsiveContainer(
+                            heightPercent: 5, widthPercent: 2,
+                          ),
                           ButtonTheme(
                             child: ResponsiveContainer(
                               heightPercent: 5,
-                              widthPercent: 30,
-                              padding: EdgeInsets.only(right: 10),
+                              widthPercent: 27,
                               child: new Center(
                                 child: RaisedButton(
                                     shape: RoundedRectangleBorder(
@@ -136,12 +141,15 @@ class _IndoorMapState extends State<IndoorMap> {
                               ),
                             ),
                           ),
+                          ResponsiveContainer(
+                            heightPercent: 5, widthPercent: 2,
+                          ),
 //                          SizedBox(width: 7.0),
 
                           ButtonTheme(
                             child: ResponsiveContainer(
                               heightPercent: 5,
-                              widthPercent: 40,
+                              widthPercent: 35,
                               child: new Container(
                                 child: RaisedButton(
                                     shape: RoundedRectangleBorder(
@@ -164,6 +172,9 @@ class _IndoorMapState extends State<IndoorMap> {
                               ),
                             ),
                           ),
+                          ResponsiveContainer(
+                            heightPercent: 5, widthPercent: 5,
+                          ),
                         ],
                       ),
                     ),
@@ -177,16 +188,19 @@ class _IndoorMapState extends State<IndoorMap> {
                     child: ResponsiveContainer(
                       heightPercent: 5,
                       widthPercent: 100,
-                      padding: EdgeInsets.symmetric(horizontal: 10),
+
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
+                          ResponsiveContainer(
+                            heightPercent: 5, widthPercent: 5,
+                          ),
 //                          SizedBox(width: 5.0),
                           ButtonTheme(
                             child: ResponsiveContainer(
                               heightPercent: 5,
-                              widthPercent: 55,
-                              padding: EdgeInsets.only(right: 10),
+                              widthPercent: 50,
+
                               child: new Container(
                                 child: RaisedButton(
                                     shape: RoundedRectangleBorder(
@@ -211,10 +225,13 @@ class _IndoorMapState extends State<IndoorMap> {
                           ),
                           //
 //                          SizedBox(width: 7.0),
+                          ResponsiveContainer(
+                            heightPercent: 5, widthPercent: 2,
+                          ),
                           ButtonTheme(
                             child: ResponsiveContainer(
                               heightPercent: 5,
-                              widthPercent: 40,
+                              widthPercent: 38,
                               child: new Container(
                                 child: RaisedButton(
                                     shape: RoundedRectangleBorder(
@@ -237,12 +254,15 @@ class _IndoorMapState extends State<IndoorMap> {
                               ),
                             ),
                           ),
+                          ResponsiveContainer(
+                            heightPercent: 5, widthPercent: 5,
+                          ),
                         ],
                       ),
                     ),
                   ),
                   new Padding(
-                    padding: new EdgeInsets.all(5.0),
+                    padding: new EdgeInsets.symmetric(vertical: 5,horizontal: 20),
                     child: AutoSizeText(
                     '___________________________________________________________________________',
                       maxLines: 1,
@@ -259,15 +279,18 @@ class _IndoorMapState extends State<IndoorMap> {
                     child: ResponsiveContainer(
                       heightPercent: 5,
                       widthPercent: 100,
-                      padding: EdgeInsets.symmetric(horizontal: 10),
+
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
 //                          SizedBox(width: 5.0),
+                          ResponsiveContainer(
+                            heightPercent: 5, widthPercent: 5,
+                          ),
                           ButtonTheme(
                             child: ResponsiveContainer(
                               heightPercent: 5,
-                              widthPercent: 40,
+                              widthPercent: 38,
                               padding: EdgeInsets.only(right: 10),
                               child: new Container(
                                 child: RaisedButton(
@@ -292,10 +315,13 @@ class _IndoorMapState extends State<IndoorMap> {
                             ),
                           ),
 //                          SizedBox(width: 7.0),
+                          ResponsiveContainer(
+                            heightPercent: 5, widthPercent: 2,
+                          ),
                           ButtonTheme(
                             child: ResponsiveContainer(
                               heightPercent: 5,
-                              widthPercent: 55,
+                              widthPercent: 50,
                               child: new Container(
                                 child: RaisedButton(
                                     shape: RoundedRectangleBorder(
@@ -318,12 +344,15 @@ class _IndoorMapState extends State<IndoorMap> {
                               ),
                             ),
                           ),
+                          ResponsiveContainer(
+                            heightPercent: 5, widthPercent: 5,
+                          ),
                         ],
                       ),
                     ),
                   ),
                   new Padding(
-                    padding: new EdgeInsets.all(5.0),
+                    padding: new EdgeInsets.symmetric(vertical: 5,horizontal: 20),
                     child: AutoSizeText(
                       '___________________________________________________________________________',
                       maxLines: 1,
@@ -340,15 +369,17 @@ class _IndoorMapState extends State<IndoorMap> {
                     child: ResponsiveContainer(
                       heightPercent: 5,
                       widthPercent: 100,
-                      padding: EdgeInsets.symmetric(horizontal: 10),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
 //                          SizedBox(width: 5.0),
+                          ResponsiveContainer(
+                            heightPercent: 5, widthPercent: 5,
+                          ),
                           ButtonTheme(
                             child: ResponsiveContainer(
                               heightPercent: 5,
-                              widthPercent: 46,
+                              widthPercent: 40,
                               padding: EdgeInsets.only(right: 10),
                               child: new Container(
                                 child: RaisedButton(
@@ -373,6 +404,9 @@ class _IndoorMapState extends State<IndoorMap> {
                             ),
                           ),
 //                          SizedBox(width: 7.0),
+                          ResponsiveContainer(
+                            heightPercent: 5, widthPercent: 2,
+                          ),
                           ButtonTheme(
                             child: ResponsiveContainer(
                               heightPercent: 5,
@@ -399,12 +433,16 @@ class _IndoorMapState extends State<IndoorMap> {
                               ),
                             ),
                           ),
+                          ResponsiveContainer(
+                            heightPercent: 5, widthPercent: 5,
+                          ),
                         ],
                       ),
                     ),
                   ),
+//
                   new Padding(
-                    padding: new EdgeInsets.all(5.0),
+                    padding: new EdgeInsets.symmetric(vertical: 5,horizontal: 20),
                     child:  AutoSizeText(
                       '___________________________________________________________________________',
                       maxLines: 1,
@@ -416,20 +454,23 @@ class _IndoorMapState extends State<IndoorMap> {
                     ),
                   ),
                   //column 5
-                  new Padding(padding: EdgeInsets.all(2.0)),
+
                   Container(
                     child: ResponsiveContainer(
                       heightPercent: 5,
                       widthPercent: 100,
-                      padding: EdgeInsets.symmetric(horizontal: 10),
+
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
 //                          SizedBox(width: 5.0),
+                          ResponsiveContainer(
+                            heightPercent: 5, widthPercent: 5,
+                          ),
                           ButtonTheme(
                             child: ResponsiveContainer(
                               heightPercent: 5,
-                              widthPercent: 92,
+                              widthPercent: 90,
                               child: new Container(
                                 child: RaisedButton(
                                     shape: RoundedRectangleBorder(
@@ -452,20 +493,25 @@ class _IndoorMapState extends State<IndoorMap> {
                               ),
                             ),
                           ),
+                          ResponsiveContainer(
+                            heightPercent: 5, widthPercent: 5,
+                          ),
                         ],
                       ),
                     ),
                   ),
-                  new Padding(padding: EdgeInsets.all(2.0)),
                   //column 6
                   Container(
                     child: ResponsiveContainer(
                       heightPercent: 10,
                       widthPercent: 100,
-                      padding: EdgeInsets.symmetric(horizontal: 10),
+
                       child: Row(
                         children: <Widget>[
 //                          SizedBox(width: 30.0),
+                          ResponsiveContainer(
+                            heightPercent: 5, widthPercent: 5,
+                          ),
                           ButtonTheme(
                             child: ResponsiveContainer(
                               heightPercent: 5,

@@ -42,7 +42,7 @@ class Home extends StatelessWidget {
             children: <Widget>[
               SizedBox(
                 child: ResponsiveContainer(
-                  heightPercent: 5.0,
+                  heightPercent: 5.3,
                   widthPercent: 100.0,
                 ),
               ),
